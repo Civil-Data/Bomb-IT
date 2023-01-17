@@ -9,7 +9,7 @@ Bomb-IT can be played with or agains other players that can both be computer- an
 * **Single player:** The game can only be played against computer players.
 * **Multi-player:** The game is hosted and managed by one player and up to four human players can join.
 
-Players can be devided into teams by such as **2vs2**, **3vs3** or play **free-for-all**.
+Players can be devided into teams such as **2vs2**, **3vs3** or play **free-for-all**.
 
 ## Development
 This project is being developed using the Unity game development software together with the written functionality in C# using Visual Studio as IDE.
