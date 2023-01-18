@@ -16,7 +16,7 @@ Players can be devided into teams such as **2vs2**, **3vs3** or play **free-for-
 This project is being developed using the Unity game development software together with the written functionality in C# using Visual Studio as IDE.
 
 ## Build System
-We have not currently choosen a build system for this project. Currently evaluation these: ?
+We have not currently choosen a build system for this project. Currently choosing between: mark and ant.
 
 ### List of names in Group 5
 * Martin Nilsson, **Github:** MarrisSparrisNilsson
