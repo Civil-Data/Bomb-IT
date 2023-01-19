@@ -28,4 +28,4 @@ We have not currently choosen a build system for this project. Currently choosin
 ## Declaration
 I, Joel Scarinius, declare that I am the sole auther of the content I add to this repository.
 
-|, I, Matilda Ronder, declare that I am the sole auther of the content I add to this repository.
+I, Matilda Ronder, declare that I am the sole auther of the content I add to this repository.
