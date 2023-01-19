@@ -30,3 +30,4 @@ For starters we will just use visual studio as our build system but we will chan
 I, Joel Scarinius, declare that I am the sole auther of the content I add to this repository.  
 I, Matilda Ronder, declare that I am the sole auther of the content I add to this repository.  
 I, Martin Nilsson, declare that I am the sole auther of the content I add to this repository.  
+I, Felix Stockinger, declare that I am the sole auther of the content I add to this repository.  
