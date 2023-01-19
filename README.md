@@ -24,3 +24,6 @@ We have not currently choosen a build system for this project. Currently choosin
 * Joel Scarinius, **Github:** JoelScarinius
 * Jacob Danielsson, **Github:** McFluffen
 * Matilda Ronder, **Github:** matildaronder
+
+## Declaration
+I, Joel Scarinius, declare that I am the sole auther of the content I add to this repository.
