@@ -26,6 +26,6 @@ We have not currently choosen a build system for this project. Currently choosin
 * Matilda Ronder, **Github:** matildaronder
 
 ## Declaration
-I, Joel Scarinius, declare that I am the sole auther of the content I add to this repository.
-
-I, Matilda Ronder, declare that I am the sole auther of the content I add to this repository.
+I, Joel Scarinius, declare that I am the sole auther of the content I add to this repository.  
+I, Matilda Ronder, declare that I am the sole auther of the content I add to this repository.  
+I, Martin Nilsson, declare that I am the sole auther of the content I add to this repository.  
