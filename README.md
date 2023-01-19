@@ -7,3 +7,4 @@ Project is a school project in software development.
 * Joel Scarinius, Github: JoelScarinius
 * Jacob Danielsson, Github: McFluffen
 * Matilda Ronder, Github: matildaronder
+s
