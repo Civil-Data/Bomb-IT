@@ -28,7 +28,7 @@ We will start with making graphical assets in photoshop and the code behind thes
 We have not currently choosen a build system for this project. Currently choosing between: mark and ant.   
 For starters we will just use visual studio as our build system but we will change this.
 
-## Canban Board
+## Kanban Board
 * https://github.com/orgs/Civil-Data/projects/1/views/1
 
 ### List of names in Group 5
@@ -44,5 +44,5 @@ I, Joel Scarinius, declare that I am the sole auther of the content I add to thi
 I, Matilda Ronder, declare that I am the sole auther of the content I add to this repository.  
 I, Martin Nilsson, declare that I am the sole auther of the content I add to this repository.  
 I, Felix Stockinger, declare that I am the sole auther of the content I add to this repository.  
-I, Lukas Ydkvist, declare that I am the sole auther of the content I add to this repository
+I, Lukas Ydkvist, declare that I am the sole auther of the content I add to this repository.  
 I, Jacob Danielsson, declare that I am the sole auther of the content i add to this repository. 
