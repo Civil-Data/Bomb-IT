@@ -2,7 +2,7 @@
 Project is a school project in software development.
 
 ## Project Description
- The project is a recreation of the classic 
+ This a recreation of the classic Bomb It game. The main purpose of this project.
 
 ## Game Details
 Bomb-IT can be played with or agains other players that can both be computer- and/or human players. To start, the maximum amount of players will be six. The playing field will be a square field to begin with and could perhaps be changed through game settings to change size and shape. The game will have two modes:
