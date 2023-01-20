@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterMovement : MonoBehaviour
+public class MapGenerator : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
