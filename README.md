@@ -33,3 +33,4 @@ I, Matilda Ronder, declare that I am the sole auther of the content I add to thi
 I, Martin Nilsson, declare that I am the sole auther of the content I add to this repository.  
 I, Felix Stockinger, declare that I am the sole auther of the content I add to this repository.  
 I, Lukas Ydkvist, declare that I am the sole auther of the content I add to this repository
+I, Jacob Danielsson, declare that I am the sole auther of the content i add to this repository. 
