@@ -14,6 +14,12 @@ Players can be devided into teams such as **2vs2**, **3vs3** or play **free-for-
 
 ## Development
 This project is being developed using the Unity game development software together with the written functionality in C# using Visual Studio as IDE.
+We will start with making graphical assets in photoshop and the code behind these. For example player movement, object states and basic UI. Later we will add local multiplayer.
+### Some Initial features
+* Basic player control. Movement with arrow keys and placing bombs with space.
+* Bomb Logic. Countdown, range (power). Example for countdown is 5 sek, and the initial radius is 2 blocks.
+* Initial Map objects. Destructable and indestructable.These objects will block player movement and the destructive radius of the bomb. If the destructable objects are inside of the radius of a bomb, then these will be removed from the map. If not destructable then the object remains. 
+* Items, pickup and powerups. Player will pickup items to improve his or her stats. Ie More powerful bombs (+1 range), faster movement (increase by a factor of 1.1 (10%)) etc. When picked up these shall be removed
 
 ## Build System
 We have not currently choosen a build system for this project. Currently choosing between: mark and ant.   
