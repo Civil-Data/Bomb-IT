@@ -31,7 +31,7 @@ For starters we will just use visual studio as our build system but we will chan
 ## Kanban Board
 * https://github.com/orgs/Civil-Data/projects/1/views/1
 
-### List of names in Group 5
+## List of names in Group 5
 * Martin Nilsson, **Github:** MarrisSparrisNilsson
 * Felix Stockinger, **Github:** Stocken99
 * Joel Scarinius, **Github:** JoelScarinius
