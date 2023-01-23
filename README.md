@@ -38,6 +38,16 @@ We will start with making graphical assets in photoshop and the code behind thes
 We have not currently choosen a build system for this project. Currently choosing between: mark and ant.   
 For starters we will just use visual studio as our build system but we will change this.
 
+## Requirements 
+* Unity Hub is needed to run our program you can download Unity Hub from this link: https://store.unity.com/download
+* When Unity is installed you also need to install Unity Editor version 2022.2.2f1
+
+## Compiling and Running
+1. Clone our repository to desired location on your computer.
+2. Open the project from Unity Hub
+3. Compile and run with Unity Editor by pressing play button.
+4. When playbutton is pressed our first map and 2 characters are shown, one of the characters is moveable by pressing the arrow keys.
+
 ## Kanban Board
 * https://github.com/orgs/Civil-Data/projects/1/views/1
 
