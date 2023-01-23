@@ -30,10 +30,14 @@ We have not currently choosen a build system for this project. Currently choosin
 For starters we will just use visual studio as our build system but we will change this.
 
 ## Requirements 
-* Unity is needed to run our program you can download from this link: https://store.unity.com/download
+* Unity Hub is needed to run our program you can download Unity Hub from this link: https://store.unity.com/download
+* When Unity is installed you also need to install Unity Editor version 2022.2.2f1
 
 ## Compiling and Running
-* Compile and run with either unity or Visual Studio
+1. Clone our repository to desired location on your computer.
+2. Open the project from Unity Hub
+3. Compile and run with Unity Editor by pressing play button.
+4. When playbutton is pressed our in game Menu will be shown.
 
 ## Kanban Board
 * https://github.com/orgs/Civil-Data/projects/1/views/1
