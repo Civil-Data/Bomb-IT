@@ -29,6 +29,12 @@ We will start with making graphical assets in photoshop and the code behind thes
 We have not currently choosen a build system for this project. Currently choosing between: mark and ant.   
 For starters we will just use visual studio as our build system but we will change this.
 
+## Requirements 
+* Unity is needed to run our program you can install it on this link: https://store.unity.com/download
+
+## Compiling and Running
+* Compile and run with either unity or Visual Studio
+
 ## Kanban Board
 * https://github.com/orgs/Civil-Data/projects/1/views/1
 
