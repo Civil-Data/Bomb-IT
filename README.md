@@ -23,6 +23,7 @@ We will start with making graphical assets in photoshop and the code behind thes
 * Initial Map objects and placement of these. Can include player spawn. Destructable and indestructable.These objects will block player movement and the destructive radius of the bomb. If the destructable objects are inside of the radius of a bomb, then these will be removed from the map. If not destructable then the object remains. 
 * Items, pickup and powerups. Player will pickup items to improve his or her stats. Ie More powerful bombs (+1 range), faster movement (increase by a factor of 1.1 (10%)) etc. When picked up these shall be removed
 * Basic UI. Choose number of players, size of map and gamemode.
+* Random map generator.
 
 ## Build System
 We have not currently choosen a build system for this project. Currently choosing between: mark and ant.   
