@@ -44,9 +44,9 @@ For starters we will just use visual studio as our build system but we will chan
 ## Compiling and Running
 1. Clone our repository to desired location on your computer.
 2. Open the project from Unity Hub
-3. When project is open navigate to the top left corner. In the drop down menu of the file tab click the build and run item. Sometimes you might have to press the "Build Settings...." button and click build i run. Creating a new folder is recommended. (This will also create an .exe file on windows))
-4. Compile and run with Unity Editor by pressing play button.
-5. When playbutton is pressed our first map and 2 characters are shown, one of the characters is moveable by pressing the arrow keys.
+3. When project is open, go to: **File > Build Settings > Build And Run**. Then create a new folder outside the project folder where the build will be created. The folder will now hold a Bomb-IT.exe file used to execute the program. 
+4. The game should now run and a unity window with a playing field and two characters should pop up. You should be able to control one of them with W,A,S,D or arrow keys. You can also push around the other player around the map.
+5. To exit the game press **Alt+F4**.
 
 ## Kanban Board
 * https://github.com/orgs/Civil-Data/projects/1/views/1
