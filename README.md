@@ -1,15 +1,14 @@
-# BOMB-IT
+Bomb-IT
+=======
 Project is a school project in software development.
 
-<<<<<<< HEAD
 ### List of names
 * Martin Nilsson, Github: MartinSparrisNilsson
 * Felix Stockinger, Github: Stocken99
 * Joel Scarinius, Github: JoelScarinius
 * Jacob Danielsson, Github: McFluffen
 * Matilda Ronder, Github: matildaronder
-s
-=======
+
 ## Project Description
  This a recreation of the classic Bomb It game. The main purpose of this project is the to learn various software development techniques.
 
@@ -65,5 +64,4 @@ I, Matilda Ronder, declare that I am the sole auther of the content I add to thi
 I, Martin Nilsson, declare that I am the sole auther of the content I add to this repository.  
 I, Felix Stockinger, declare that I am the sole auther of the content I add to this repository.  
 I, Lukas Ydkvist, declare that I am the sole auther of the content I add to this repository.  
-I, Jacob Danielsson, declare that I am the sole auther of the content i add to this repository. 
->>>>>>> 320b2e8b2551161824fa0cea42cd8cef396a6b63
+I, Jacob Danielsson, declare that I am the sole auther of the content i add to this repository.  
