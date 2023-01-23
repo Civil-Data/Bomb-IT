@@ -37,7 +37,7 @@ For starters we will just use visual studio as our build system but we will chan
 1. Clone our repository to desired location on your computer.
 2. Open the project from Unity Hub
 3. Compile and run with Unity Editor by pressing play button.
-4. When playbutton is pressed our ingame Menu will be shown.
+4. When playbutton is pressed our first map and 2 characters are shown, one of the characters is moveable by pressing the arrow keys.
 
 ## Kanban Board
 * https://github.com/orgs/Civil-Data/projects/1/views/1
