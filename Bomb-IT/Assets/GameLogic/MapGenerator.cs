@@ -3,18 +3,18 @@ using Random = System.Random;
 
 public class MapGenerator
 {
-    private Random? random;
+    private Random random;
     private int stage = 0;
     public enum Element { WALL, TREE, ROCK, GROUND, START }
     [SerializeField]
     public GameObject map;
-    public Element[,]? RandomGameBoard1 = new Element[15, 20];
-    public Element[,]? RandomGameBoard2 = new Element[15, 20];
-    public Element[,]? RandomGameBoard3 = new Element[15, 20];
-    public Element[,]? FixedGameBoard1 = new Element[15, 20];
-    public Element[,]? FixedGameBoard2 = new Element[15, 20];
-    public Element[,]? FixedGameBoard3 = new Element[15, 20];
-    public Element[,]? gameBoard;
+    public Element[,] RandomGameBoard1 = new Element[15, 20];
+    public Element[,] RandomGameBoard2 = new Element[15, 20];
+    public Element[,] RandomGameBoard3 = new Element[15, 20];
+    public Element[,] FixedGameBoard1 = new Element[15, 20];
+    public Element[,] FixedGameBoard2 = new Element[15, 20];
+    public Element[,] FixedGameBoard3 = new Element[15, 20];
+    public Element[,] gameBoard;
 
     public MapGenerator(int row, int col, int players)
     {
