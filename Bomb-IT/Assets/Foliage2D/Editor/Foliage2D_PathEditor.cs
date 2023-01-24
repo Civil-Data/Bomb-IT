@@ -213,10 +213,10 @@ namespace Foliage
                     Handles.Label(tPos, new GUIContent(texBlueDot), iconStyle);
                 }
 
-                global = Handles.FreeMoveHandle(pos, Quaternion.identity, HandleScale(pos), Vector3.zero, Handles.CircleHandleCap);
+                var fmh_216_54_638101550439115291 = Quaternion.identity; global = Handles.FreeMoveHandle(pos, HandleScale(pos), Vector3.zero, Handles.CircleHandleCap);
 
                 if (!path2D.uniformValues && path2D.foliagePathType == Foliage2D_PathType.Smooth)
-                    tGlobal = Handles.FreeMoveHandle(tPos, Quaternion.identity, HandleScale(tPos), Vector3.zero, Handles.CircleHandleCap);
+                    { var fmh_219_60_638101550439146847 = Quaternion.identity; tGlobal = Handles.FreeMoveHandle(tPos, HandleScale(tPos), Vector3.zero, Handles.CircleHandleCap); }
 
                 if (global != pos)
                 {
