@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Bomb-IT/Assets/GameAssets.meta
 guid: bd393d1ec7cf4b34686bae1c80267d6b
+========
+guid: fe0bec035b1f779479380af002163000
+>>>>>>>> main:Bomb-IT/Assets/GameAssets/TextMesh Pro/Examples & Extras.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,5 +1,13 @@
-# BOMB-IT
+Bomb-IT
+=======
 Project is a school project in software development.
+
+### List of names
+* Martin Nilsson, Github: MartinSparrisNilsson
+* Felix Stockinger, Github: Stocken99
+* Joel Scarinius, Github: JoelScarinius
+* Jacob Danielsson, Github: McFluffen
+* Matilda Ronder, Github: matildaronder
 
 ## Project Description
  This a recreation of the classic Bomb It game. The main purpose of this project is the to learn various software development techniques.
@@ -29,6 +37,17 @@ We will start with making graphical assets in photoshop and the code behind thes
 We have not currently choosen a build system for this project. Currently choosing between: mark and ant.   
 For starters we will just use visual studio as our build system but we will change this.
 
+## Requirements 
+* Unity Hub is needed to run our program you can download Unity Hub from this link: https://store.unity.com/download
+* When Unity is installed you also need to install Unity Editor version 2022.2.2f1
+
+## Compiling and Running
+1. Clone our repository to desired location on your computer.
+2. Open the project from Unity Hub
+3. When project is open, go to: **File > Build Settings > Build And Run**. Then create a new folder outside the project folder where the build will be created. The folder will now hold a Bomb-IT.exe file used to execute the program. 
+4. The game should now run and a unity window with a playing field and two characters should pop up. You should be able to control one of them with W,A,S,D or arrow keys. You can also push around the other player around the map.
+5. To exit the game press **Alt+F4**.
+
 ## Kanban Board
 * https://github.com/orgs/Civil-Data/projects/1/views/1
 
@@ -46,4 +65,4 @@ I, Matilda Ronder, declare that I am the sole auther of the content I add to thi
 I, Martin Nilsson, declare that I am the sole auther of the content I add to this repository.  
 I, Felix Stockinger, declare that I am the sole auther of the content I add to this repository.  
 I, Lukas Ydkvist, declare that I am the sole auther of the content I add to this repository.  
-I, Jacob Danielsson, declare that I am the sole auther of the content i add to this repository. 
+I, Jacob Danielsson, declare that I am the sole auther of the content i add to this repository.  
