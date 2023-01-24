@@ -20,9 +20,11 @@ public class MapGenerator
     {
         random = new Random();
         gameBoard = RandomGameBoard1;
-
+        Position validPositions = new Position();
         SetupGameBoard(row, col, players);
     }
+
+
 
     public void ObstaclesGenerator()
     {
@@ -58,7 +60,6 @@ public class MapGenerator
 
     private void SetupGameBoard(int row, int col, int players)
     {
-        Element[,] freeTiles;
         for (int i = 0; i < gameBoard.GetLength(0); i++)
         {
             for (int j = 0; j < gameBoard.GetLength(1); j++)
@@ -122,21 +123,92 @@ public class MapGenerator
             gameBoard[row, col] = Element.START;
             gameBoard[row, col - 1] = Element.START;
             gameBoard[row - 1, col] = Element.START;
-
-
-            //gameBoard = addElements(freeTiles);
             return;
         }
 
     }
 
-    //private void addElements(Element[,] freeTiles)
+    //private List<Position> CreateValidPositions(int players)
     //{
-    //    foreach (Element tile in freeTiles)
+    //    List<Position> validPositions = new List<Position>();
+    //    if (players == 2)
     //    {
-    //        gameBoard[i, j] = Element.GROUND;
-    //    }
-    //}
+    //        for (int i = 0; i < gameBoard.GetLength(0); i++)
+    //        {
+    //            for (int j = 0; j < gameBoard.GetLength(1); j++)
+    //            {
+    //                if (i < 6 && j < 12) j++;
+    //                else if (j == 12) break;
+    //                if (gameBoard[i, j] != Element.START)
+    //                {
+    //                    Position position = new Position();
+    //                    position.Row = i;
+    //                    position.Col = j;
+    //                    validPositions.Add(position);
+    //                }
+    //            }
+    //        }
+
+
+    //    else if (players == 4)
+    //        {
+    //            gameBoard[0, 0] = Element.START;
+    //            gameBoard[0, 1] = Element.START;
+    //            gameBoard[1, 0] = Element.START;
+
+    //            gameBoard[row, col] = Element.START;
+    //            gameBoard[row, col - 1] = Element.START;
+    //            gameBoard[row - 1, col] = Element.START;
+
+    //            gameBoard[0, col] = Element.START;
+    //            gameBoard[1, col] = Element.START;
+    //            gameBoard[0, col - 1] = Element.START;
+
+    //            gameBoard[row, 0] = Element.START;
+    //            gameBoard[row, 1] = Element.START;
+    //            gameBoard[row - 1, 0] = Element.START;
+    //            return;
+    //        }
+    //        else
+    //        {
+    //            gameBoard[0, 0] = Element.START;
+    //            gameBoard[0, 1] = Element.START;
+    //            gameBoard[1, 0] = Element.START;
+
+    //            gameBoard[0, col / 2] = Element.START;
+    //            gameBoard[1, col / 2] = Element.START;
+    //            gameBoard[2, col / 2] = Element.START;
+
+    //            gameBoard[0, col] = Element.START;
+    //            gameBoard[1, col] = Element.START;
+    //            gameBoard[0, col - 1] = Element.START;
+
+    //            gameBoard[row, 0] = Element.START;
+    //            gameBoard[row, 1] = Element.START;
+    //            gameBoard[row - 1, 0] = Element.START;
+
+    //            gameBoard[row, col / 2] = Element.START;
+    //            gameBoard[row - 1, col / 2] = Element.START;
+    //            gameBoard[row - 2, col / 2] = Element.START;
+
+    //            gameBoard[row, col] = Element.START;
+    //            gameBoard[row, col - 1] = Element.START;
+    //            gameBoard[row - 1, col] = Element.START;
+    //            return;
+    //            return new List<Position>();
+    //        }
+
+    //        private void addElements(int players)
+    //        {
+    //            List<Position> validPositions = CreateValidPositions(players);
+    //            foreach (Position position in validPositions)
+    //            {
+    //                if (random.Next(1, 2) == 2)
+    //                {
+    //                    gameBoard[position.Row, position.Col] = Element.WALL;
+    //                }
+    //            }
+    //        }
     // Start is called before the first frame update
     //void Start()
     //{
