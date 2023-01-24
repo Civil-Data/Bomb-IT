@@ -3,7 +3,7 @@ using Random = System.Random;
 
 public class MapGenerator
 {
-<<<<<<< HEAD:Bomb-IT/Assets/GameContent/MapGenerator.cs
+
     private Random? random;
     private enum Element { WALL, TREE, ROCK, GROUND, START }
     private Element[,]? RandomGameBoard1 = new Element[13, 13];
@@ -11,20 +11,6 @@ public class MapGenerator
     private Element[,]? RandomGameBoard3 = new Element[21, 25];
     public Element[,]? gameBoard;
     private List<Position> validPositions = new Position();
-=======
-    private Random random;
-    private int stage = 0;
-    public enum Element { WALL, TREE, ROCK, GROUND, START }
-    [SerializeField]
-    public GameObject map;
-    public Element[,] RandomGameBoard1 = new Element[15, 20];
-    public Element[,] RandomGameBoard2 = new Element[15, 20];
-    public Element[,] RandomGameBoard3 = new Element[15, 20];
-    public Element[,] FixedGameBoard1 = new Element[15, 20];
-    public Element[,] FixedGameBoard2 = new Element[15, 20];
-    public Element[,] FixedGameBoard3 = new Element[15, 20];
-    public Element[,] gameBoard;
->>>>>>> 6ca9e78c2db123e38a1fab8a9564db4cf5f77394:Bomb-IT/Assets/GameLogic/MapGenerator.cs
 
     public MapGenerator(int row, int col, int players)
     {
