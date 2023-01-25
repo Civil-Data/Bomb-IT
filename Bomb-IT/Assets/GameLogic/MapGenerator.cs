@@ -9,15 +9,15 @@ public class MapGenerator
     private Element[,]? RandomGameBoard1 = new Element[13, 13];
     private Element[,]? RandomGameBoard2 = new Element[15, 15];
     private Element[,]? RandomGameBoard3 = new Element[21, 25];
-    public Element[,]? gameBoard;
-    private List<Position> validPositions = new Position();
+    private Element[,]? gameBoard;
+    private List<Position> validPositions = new List<Position>();
 
     public MapGenerator(int row, int col, int players)
     {
         random = new Random();
         gameBoard = RandomGameBoard1;
         SetupGameBoard(row, col, players);
-        validPositions = CreateValidPositions(players)
+        validPositions = CreateValidPositions(players);
         AddElements(players);
     }
 
