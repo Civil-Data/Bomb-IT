@@ -56,7 +56,7 @@ For starters we will just use visual studio as our build system but we will chan
 * Felix Stockinger, **Github:** Stocken99
 * Joel Scarinius, **Github:** JoelScarinius
 * Jacob Danielsson, **Github:** McFluffen
-* Matilda Ronder, **Github:** matildaronder
+* Matilda Ronder, **Github:** 
 * Lukas Ydkvist, **Github:** Lukasydkvist
 
 ## Declaration
