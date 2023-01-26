@@ -31,7 +31,7 @@ ExportedObj/
 .consulo/
 *.csproj
 *.unityproj
-*.sln
+Bomt-IT/*.sln
 *.suo
 *.tmp
 *.user
