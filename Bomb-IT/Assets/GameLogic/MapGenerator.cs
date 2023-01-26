@@ -3,11 +3,7 @@ using Random = System.Random;
 
 public class MapGenerator
 {
-
     private Random? random;
-    private Element[,]? RandomGameBoard1 = new Element[13, 13];
-    private Element[,]? RandomGameBoard2 = new Element[15, 15];
-    private Element[,]? RandomGameBoard3 = new Element[21, 25];
     public Element[,]? gameBoard;
     private List<Position> validPositions = new List<Position>();
 
@@ -25,6 +21,8 @@ public class MapGenerator
         if (players == 2)
         {
             row = 12; col = 12;
+            gameBoard = new Element[row + 1, col + 1];
+
             gameBoard[0, 0] = Element.START;
             gameBoard[0, 1] = Element.START;
             gameBoard[1, 0] = Element.START;
@@ -36,6 +34,8 @@ public class MapGenerator
         else if (players == 4)
         {
             row = 14; col = 14;
+            gameBoard = new Element[row + 1, col + 1];
+
             gameBoard[0, 0] = Element.START;
             gameBoard[0, 1] = Element.START;
             gameBoard[1, 0] = Element.START;
@@ -55,6 +55,8 @@ public class MapGenerator
         else
         {
             row = 20; col = 24;
+            gameBoard = new Element[row + 1, col + 1];
+
             gameBoard[0, 0] = Element.START;
             gameBoard[0, 1] = Element.START;
             gameBoard[1, 0] = Element.START;
@@ -98,7 +100,7 @@ public class MapGenerator
             {
                 for (int j = 0; j < gameBoard.GetLength(1); j++)
                 {
-                    if (i == 7 || (j == 12 && i > 7)) continue;
+                    if (i == 6 || (j == 12 && i > 6)) continue;
                     else if ((j == 0 && i < 6)) j++;
                     if (gameBoard[i, j] != Element.START)
                     {
@@ -139,7 +141,7 @@ public class MapGenerator
                 if (i == 10) continue;
                 for (int j = 0; j < gameBoard.GetLength(1) - 1; j++)
                 {
-                    if ((j == 0 && j < gameBoard.GetLength(1) - 2) || (j == 7)) j++;
+                    if ((j == 0 && j < gameBoard.GetLength(1) - 2) || (j == 12)) j++;
                     if (gameBoard[i, j] != Element.START)
                     {
                         Position position = new Position();
