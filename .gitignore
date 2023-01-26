@@ -30,8 +30,10 @@
 ExportedObj/
 .consulo/
 *.csproj
+!Tests.csproj
 *.unityproj
-Bomt-IT/*.sln
+*.sln
+!Tests.sln
 *.suo
 *.tmp
 *.user
