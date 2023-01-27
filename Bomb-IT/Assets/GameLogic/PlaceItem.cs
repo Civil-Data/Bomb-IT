@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlaceItem : MonoBehaviour
 {
-
+    /*
     private GameObject playerObject = null;
     Vector2 currentPos = null;
     // Start is called before the first frame update
@@ -35,4 +35,5 @@ public class PlaceItem : MonoBehaviour
     {
         //?? Instantiate (objectToSpawn, pos)
     }
+    */
 }

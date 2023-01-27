@@ -21,7 +21,7 @@ public class MapGenerator
         AddElements(players);
     }
 
-    private void SetupGameBoard(int row, int col, int players)
+    public void SetupGameBoard(int row, int col, int players)
     {
         for (int i = 0; i < gameBoard.GetLength(0); i++)
         {
