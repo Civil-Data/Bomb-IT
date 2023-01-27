@@ -10,7 +10,6 @@ Project is a school project in software development.
 * Matilda Ronder, Github: matildaronder
 * Lukas Ydkvist, GitHub: Lukasydkvist
 
-
 ## Project Description
  This a recreation of the classic Bomb It game. The main purpose of this project is the to learn various software development techniques.
 
@@ -69,6 +68,12 @@ For starters we will just use visual studio as our build system but we will chan
 4. Click on Run all.
 (5. If the above points dont work. Try to do the steps in **Compiling and Running**) 
 
+## How to run a linter on our project
+1. Open visual studio
+2. Go to: **Tools > Options....**
+3. Search for **Code Cleanup.**
+4. Check the **"Run Code Cleanup profile on Save"**
+5. Click on the **blue text** and add whichever fix you want to use and click **OK**.
 
 
 ## Kanban Board
