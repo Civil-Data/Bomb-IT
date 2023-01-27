@@ -1,3 +1,4 @@
+//using Codice.Client.BaseCommands;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,8 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    float baseSpeed = 10;
-    float speedModifier = 1.0f; //Remove later
+    float baseSpeed = 0.5f;
+    float speedModifier = 0.5f; //Remove later
     // Update is called once per frame
     void Update()
     {
@@ -23,8 +24,13 @@ public class CharacterMovement : MonoBehaviour
          */
         Vector3 movement = new Vector3(inputX * currentSpeed, inputY * currentSpeed); //Movement with base speed, which is set to 10 here. Possible add speed modifier later.
 
-        movement *= Time.deltaTime;
-        transform.Translate(movement);
+        transform.Translate(Move(inputX,inputY,Time.deltaTime, currentSpeed));
+    }
+    public Vector3 Move(float h, float v, float deltaTime, float currentSpeed)
+    {
+        float x = h * currentSpeed * deltaTime;
+        float y = v * currentSpeed * deltaTime;
+        return new Vector3(x, y, 0);
     }
 
 }
