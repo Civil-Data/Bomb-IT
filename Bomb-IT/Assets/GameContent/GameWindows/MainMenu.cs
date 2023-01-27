@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    private MapGenerator mapgenerator;
+    private MapGenerator mapGenerator;
 
     public void PlayGame()
     {
@@ -20,17 +20,17 @@ public class MainMenu : MonoBehaviour
 
     public void PlayerSelect(int val)
     {
-        if(val == 0)
+        if (val == 0)
         {
-            mapgenerator = new MapGenerator(2);
+            mapGenerator = new MapGenerator(2);
         }
         if (val == 1)
         {
-            mapgenerator = new MapGenerator(4);
+            mapGenerator = new MapGenerator(4);
         }
         if (val == 2)
         {
-            mapgenerator = new MapGenerator(6);
+            mapGenerator = new MapGenerator(6);
         }
     }
 

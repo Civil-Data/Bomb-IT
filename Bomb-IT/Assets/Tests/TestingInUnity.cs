@@ -1,6 +1,6 @@
+using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
@@ -12,26 +12,27 @@ public class TestingInUnity
     [Test]
     public void TestPositiveXAxis()
     {
-        Assert.Greater(characterMovement.Move(1, 0, 1, 10).x,0.1f);
+        Assert.Greater(characterMovement.Move(1, 0, 1, 10).x, 0.1f);
     }
+
     [Test]
     public void TestNegativeXAxis()
     {
         Assert.Less(characterMovement.Move(-1, 0, 1, 10).x, 0.1f);
-
     }
+
     [Test]
     public void TestPositiveYAxis()
     {
         Assert.Greater(characterMovement.Move(0, 1, 1, 10).y, 0.1f);
-
     }
+
     [Test]
     public void TestNegativeYAxis()
     {
         Assert.Less(characterMovement.Move(0, -1, 1, 10).y, 0.1f);
-
     }
+
     private Element[,]? validGameBoard;
     private MapGenerator mapGenerator;
     private int players = 0;
