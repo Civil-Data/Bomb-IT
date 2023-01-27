@@ -2,14 +2,6 @@ Bomb-IT
 =======
 Project is a school project in software development.
 
-### List of names
-* Martin Nilsson, Github: MartinSparrisNilsson
-* Felix Stockinger, Github: Stocken99
-* Joel Scarinius, Github: JoelScarinius
-* Jacob Danielsson, Github: McFluffen
-* Matilda Ronder, Github: matildaronder
-* Lukas Ydkvist, GitHub: Lukasydkvist
-
 ## Project Description
  This a recreation of the classic Bomb It game. The main purpose of this project is the to learn various software development techniques.
 
