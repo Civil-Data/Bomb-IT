@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Random = System.Random;
 
@@ -5,34 +6,25 @@ public class MapGenerator
 {
 
     private Random? random;
-    private enum Element { WALL, TREE, ROCK, GROUND, START }
-    private Element[,]? RandomGameBoard1 = new Element[13, 13];
-    private Element[,]? RandomGameBoard2 = new Element[15, 15];
-    private Element[,]? RandomGameBoard3 = new Element[21, 25];
-    private Element[,]? gameBoard;
+    public Element[,]? gameBoard;
     private List<Position> validPositions = new List<Position>();
 
-    public MapGenerator(int row, int col, int players)
+    public MapGenerator(int players)
     {
         random = new Random();
-        gameBoard = RandomGameBoard1;
-        SetupGameBoard(row, col, players);
+        SetupGameBoard(players);
         validPositions = CreateValidPositions(players);
         AddElements(players);
     }
 
-    public void SetupGameBoard(int row, int col, int players)
+    public void SetupGameBoard(int players)
     {
-        for (int i = 0; i < gameBoard.GetLength(0); i++)
-        {
-            for (int j = 0; j < gameBoard.GetLength(1); j++)
-            {
-                gameBoard[i, j] = Element.GROUND;
-            }
-        }
-
+        int row = 0, col = 0;
         if (players == 2)
         {
+            row = 12; col = 12;
+            gameBoard = new Element[row + 1, col + 1];
+
             gameBoard[0, 0] = Element.START;
             gameBoard[0, 1] = Element.START;
             gameBoard[1, 0] = Element.START;
@@ -40,10 +32,12 @@ public class MapGenerator
             gameBoard[row, col] = Element.START;
             gameBoard[row, col - 1] = Element.START;
             gameBoard[row - 1, col] = Element.START;
-            return;
         }
         else if (players == 4)
         {
+            row = 14; col = 14;
+            gameBoard = new Element[row + 1, col + 1];
+
             gameBoard[0, 0] = Element.START;
             gameBoard[0, 1] = Element.START;
             gameBoard[1, 0] = Element.START;
@@ -59,10 +53,12 @@ public class MapGenerator
             gameBoard[row, 0] = Element.START;
             gameBoard[row, 1] = Element.START;
             gameBoard[row - 1, 0] = Element.START;
-            return;
         }
         else
         {
+            row = 20; col = 24;
+            gameBoard = new Element[row + 1, col + 1];
+
             gameBoard[0, 0] = Element.START;
             gameBoard[0, 1] = Element.START;
             gameBoard[1, 0] = Element.START;
@@ -86,11 +82,18 @@ public class MapGenerator
             gameBoard[row, col] = Element.START;
             gameBoard[row, col - 1] = Element.START;
             gameBoard[row - 1, col] = Element.START;
-            return;
         }
+        for (int i = 0; i < gameBoard.GetLength(0); i++)
+        {
+            for (int j = 0; j < gameBoard.GetLength(1); j++)
+            {
+                if (gameBoard[i, j] != Element.START) gameBoard[i, j] = Element.GROUND;
+            }
+        }
+        return;
     }
 
-    private List<Position> CreateValidPositions(int players)
+    public List<Position> CreateValidPositions(int players)
     {
         List<Position> validPositions = new List<Position>();
         if (players == 2)
@@ -99,7 +102,7 @@ public class MapGenerator
             {
                 for (int j = 0; j < gameBoard.GetLength(1); j++)
                 {
-                    if (i == 7 || (j == 12 && i > 7)) continue;
+                    if (i == 6 || (j == 12 && i > 6)) continue;
                     else if ((j == 0 && i < 6)) j++;
                     if (gameBoard[i, j] != Element.START)
                     {
@@ -140,7 +143,7 @@ public class MapGenerator
                 if (i == 10) continue;
                 for (int j = 0; j < gameBoard.GetLength(1) - 1; j++)
                 {
-                    if ((j == 0 && j < gameBoard.GetLength(1) - 2) || (j == 7)) j++;
+                    if ((j == 0 && j < gameBoard.GetLength(1) - 2) || (j == 12)) j++;
                     if (gameBoard[i, j] != Element.START)
                     {
                         Position position = new Position();
@@ -154,7 +157,7 @@ public class MapGenerator
         }
     }
 
-    private void AddElements(int players)
+    public void AddElements(int players)
     {
         List<Position> validPositions = CreateValidPositions(players);
         foreach (Position position in validPositions)
