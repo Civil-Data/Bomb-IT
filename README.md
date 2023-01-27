@@ -33,6 +33,7 @@ For starters we will just use visual studio as our build system but we will chan
 ## Requirements 
 * Unity Hub is needed to run our program you can download Unity Hub from this link: https://store.unity.com/download
 * When Unity is installed you also need to install Unity Editor version 2022.2.2f1
+*  .NET 6 SDK for uses of dotnet orelse you have to do following command in a terminal `dotnet tool install -g dotnet-format`
 
 ## Compiling and Running
 1. Clone our repository to desired location on your computer.
@@ -61,11 +62,10 @@ For starters we will just use visual studio as our build system but we will chan
 (5. If the above points dont work. Try to do the steps in **Compiling and Running**) 
 
 ## How to run a linter on our project
-1. Open visual studio
-2. Go to: **Tools > Options....**
-3. Search for **Code Cleanup.**
-4. Check the **"Run Code Cleanup profile on Save"**
-5. Click on the **blue text** and add whichever fix you want to use and click **OK**.
+1. Open a terminal
+2. Go to the directory where your cloned version of Bomb-IT is
+3. Insert script `dotnet format Bomb-IT.sln`
+4. Command will fix whitespace, code style, and analyzer issues by default.
 
 
 ## Kanban Board
