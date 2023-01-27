@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMeny : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
-    private Mapgenerator mapgenerator;
+    private MapGenerator mapgenerator;
 
     public void PlayGame()
     {
@@ -22,20 +22,20 @@ public class MainMeny : MonoBehaviour
     {
         if(val == 0)
         {
-            mapgenerator = new Mapgenerator(2);
+            mapgenerator = new MapGenerator(2);
         }
         if (val == 1)
         {
-            mapgenerator = new Mapgenerator(4);
+            mapgenerator = new MapGenerator(4);
         }
         if (val == 2)
         {
-            mapgenerator = new Mapgenerator(6);
+            mapgenerator = new MapGenerator(6);
         }
     }
 
     public void OpenScene()
     {
-        SceneManager.LoadScene("level " + level.ToString());
+        SceneManager.LoadScene("SampleScene");
     }
 }
