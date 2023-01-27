@@ -26,11 +26,11 @@ public class CharacterMovement : MonoBehaviour
 
         transform.Translate(Move(inputX,inputY,Time.deltaTime, currentSpeed));
     }
-    public Vector2 Move(float h, float v, float deltaTime, float currentSpeed)
+    public Vector3 Move(float h, float v, float deltaTime, float currentSpeed)
     {
         float x = h * currentSpeed * deltaTime;
         float y = v * currentSpeed * deltaTime;
-        return new Vector2(x, y);
+        return new Vector3(x, y, 0);
     }
 
 }
