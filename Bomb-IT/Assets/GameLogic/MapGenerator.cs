@@ -4,7 +4,6 @@ using Random = System.Random;
 
 public class MapGenerator
 {
-
     private Random? random;
     public Element[,]? gameBoard;
     private List<Position> validPositions = new List<Position>();
