@@ -50,6 +50,27 @@ For starters we will just use visual studio as our build system but we will chan
 4. The game should now run and a unity window with a playing field and two characters should pop up. You should be able to control one of them with W,A,S,D or arrow keys. You can also push around the other player around the map.
 5. To exit the game press **Alt+F4**.
 
+## How to generate code coverage information
+1. Clone our repository to desired location on your computer.
+2. Open the project from Unity Hub
+3. When the project is open go to: **Window > Package Manager.** This opens up the Packet Manager
+4. If the Packet Manager is free from the Unity App. In the upper left hand corner under the Package Manager tab you will see a plus sign. To the right of this sign, click on the Tab where the text Packages: xxxx is. This will open a drop down menu. In the drop down menu. Click on the Unity Registry. If the Tab now shows **Packages: Unity Registry** you clicked button correctly.
+5. Search and find the Code Coverage package and click on install.
+6. Close the Package Manager after the installation is done go to: **Window > Analysis > Code Coverage.** This will open the Code Cover Manager.
+7. Enable Code Coverage by enabling the checkbox **¨Enable Code Coverage"**
+8. **Optional** Change the directory where you want the code coverage Result and Report to go to.
+9. Make sure all the items except the "Tests" item in are unchecked in the **Included Assemblies**
+10. These Reports will be generated when you run the unit tests. To check the code coverage information open up the directory where these are generated and open the **index** item in your local **Internet Explorer Browser**
+
+## How to run the unit tests
+1. Clone our repository to desired location on your computer.
+2. Open the project from Unity Hub
+3. When the project is open go to **Window > General > Test Runner** This will open the Test Runner function. In which we run all our test in.
+4. Click on Run all.
+(5. If the above points dont work. Try to do the steps in **Compiling and Running**) 
+
+
+
 ## Kanban Board
 * https://github.com/orgs/Civil-Data/projects/1/views/1
 
