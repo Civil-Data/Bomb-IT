@@ -22,7 +22,7 @@ We will start with making graphical assets in photoshop and the code behind thes
 * Basic player control. Movement with arrow keys and placing bombs with space.
 * Bomb Logic. Countdown, range (power). Example for countdown is 5 sek, and the initial radius is 2 blocks.
 * Initial Map objects and placement of these. Can include player spawn. Destructable and indestructable.These objects will block player movement and the destructive radius of the bomb. If the destructable objects are inside of the radius of a bomb, then these will be removed from the map. If not destructable then the object remains. 
-* Items, pickup and powerups. Player will pickup items to improve his or her stats. Ie More powerful bombs (+1 range), faster movement (increase by a factor of 1.1 (10%)) etc. When picked up these shall be removed
+* Items, pickup and powerups. Player will pickup items to improve his or her stats. Ie More powerful bombs (+1 range), faster movement (increase by a factor of 1.1 (10%)) etc. When picked up these shall be removed.
 * Basic UI. Choose number of players, size of map and gamemode.
 * Random map generator.
 
@@ -33,7 +33,7 @@ For starters we will just use visual studio as our build system but we will chan
 ## Requirements 
 * Unity Hub is needed to run our program you can download Unity Hub from this link: https://store.unity.com/download
 * When Unity is installed you also need to install Unity Editor version 2022.2.2f1
-*  .NET 6 SDK for uses of dotnet orelse you have to do following command in a terminal `dotnet tool install -g dotnet-format`
+*  .NET 6 SDK for uses of dotnet or else you have to enter the following command in a terminal `dotnet tool install -g dotnet-format`
 
 ## Compiling and Running
 1. Clone our repository to desired location on your computer.
@@ -43,30 +43,35 @@ For starters we will just use visual studio as our build system but we will chan
 5. To exit the game press **Alt+F4**.
 
 ## How to generate code coverage information
-1. Clone our repository to desired location on your computer.
-2. Open the project from Unity Hub
-3. When the project is open go to: **Window > Package Manager.** This opens up the Packet Manager
-4. If the Packet Manager is free from the Unity App. In the upper left hand corner under the Package Manager tab you will see a plus sign. To the right of this sign, click on the Tab where the text Packages: xxxx is. This will open a drop down menu. In the drop down menu. Click on the Unity Registry. If the Tab now shows **Packages: Unity Registry** you clicked button correctly.
-5. Search and find the Code Coverage package and click on install.
-6. Close the Package Manager after the installation is done go to: **Window > Analysis > Code Coverage.** This will open the Code Cover Manager.
-7. Enable Code Coverage by enabling the checkbox **¨Enable Code Coverage"**
-8. **Optional** Change the directory where you want the code coverage Result and Report to go to.
-9. Make sure all the items except the "Tests" item in are unchecked in the **Included Assemblies**
-10. These Reports will be generated when you run the unit tests. To check the code coverage information open up the directory where these are generated and open the **index** item in your local **Internet Explorer Browser**
+1. Open the project from Unity Hub
+2. When the project is open in the Unity Editor go to: **Window > Package Manager.** This opens up the Packet Manager in a popup window.
+3. In the upper left hand corner of the Package Manager window you will see a plus sign. To the right of this sign, click on the Tab where it says "Packages: ....". This will open a drop down menu. In the drop down menu, select "Unity Registry".  
+It should now look something like this:  
+![image](https://user-images.githubusercontent.com/58775643/215223673-6af75ba5-18da-4865-b4f7-b88afab82144.png)
+
+4. Search and find the Code Coverage package and click on install.
+5. Close the Package Manager after the installation is done and go to: **Window > Analysis > Code Coverage.** This will open the Code Cover Manager.
+6. Enable Code Coverage by enabling the checkbox **¨Enable Code Coverage"**
+7. **Optional:** Change the directory where you want the code coverage Result and Report to go to.
+8. Make sure all the items except the "Tests" item in are unchecked in the **Included Assemblies**  
+![image](https://user-images.githubusercontent.com/58775643/215226026-79885c84-a358-4bda-8306-503bc005ec1a.png)
+
+9. These Reports will be generated when you run the unit tests. To check the code coverage information open up the directory where these are generated and open the **index.html** file in a **web browser**.
 
 ## How to run the unit tests
-1. Clone our repository to desired location on your computer.
-2. Open the project from Unity Hub
-3. When the project is open go to **Window > General > Test Runner** This will open the Test Runner function. In which we run all our test in.
-4. Click on Run all.
-(5. If the above points dont work. Try to do the steps in **Compiling and Running**) 
+1. Open the project from Unity Hub
+2. When the project is open go to **Window > General > Test Runner**. This will open the Test Runner window in which we run all our test in.
+3. Click on Run all. Now the test results should be visable and you can see which passed or failed.  
+For further statistics open up **Bomb-IT/Bomb-IT/CodeCoverage/Report/index.html**  
+![image](https://user-images.githubusercontent.com/58775643/215228810-9a908dad-c943-49ed-a111-cde218d6526c.png)
 
-## How to run a linter on our project
+(4. If the above points dont work. Try to do the steps in **Compiling and Running**) 
+
+## How to run a linter in our project
 1. Open a terminal
 2. Go to the directory where your cloned version of Bomb-IT is
 3. Insert script `dotnet format Bomb-IT.sln`
 4. Command will fix whitespace, code style, and analyzer issues by default.
-
 
 ## Kanban Board
 * https://github.com/orgs/Civil-Data/projects/1/views/1
