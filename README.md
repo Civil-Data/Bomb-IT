@@ -61,11 +61,13 @@ It should now look something like this:
 ## How to run the unit tests
 1. Open the project from Unity Hub
 2. When the project is open go to **Window > General > Test Runner**. This will open the Test Runner window in which we run all our test in.
-3. Click on Run all. Now the test results should be visable and you can see which passed or failed.  
-For further statistics open up **Bomb-IT/Bomb-IT/CodeCoverage/Report/index.html**  
+3. Click on Run all.  
+4. You might be prompted with a popup window asking you to switch to **debug mode**. If so click "Switch to debug mode".  
+5. Now the test results should be visable and you can see which tests have either passed or failed.  
+For further statistics open up the **index.html** file in the directory where the report was generated.  
 ![image](https://user-images.githubusercontent.com/58775643/215228810-9a908dad-c943-49ed-a111-cde218d6526c.png)
 
-(4. If the above points dont work. Try to do the steps in **Compiling and Running**) 
+(6. If the above points dont work. Try to do the steps in **Compiling and Running**) 
 
 ## How to run a linter in our project
 1. Open a terminal
