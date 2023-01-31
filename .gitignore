@@ -33,6 +33,7 @@ ExportedObj/
 !Tests.csproj
 *.unityproj
 *.sln
+!Bomb-IT.sln
 !Tests.sln
 *.suo
 *.tmp
