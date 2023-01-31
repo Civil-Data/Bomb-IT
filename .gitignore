@@ -47,7 +47,7 @@ ExportedObj/
 *.VC.db
 
 # Ignore unity version to avoid version conflicts.
-/ProjectVersion.txt
+ProjectVersion/
 
 # Unity3D generated meta files
 *.pidb.meta
