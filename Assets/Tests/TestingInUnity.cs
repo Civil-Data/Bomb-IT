@@ -1,8 +1,4 @@
 using NUnit.Framework;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.TestTools;
 
 public class TestingInUnity
 {
@@ -60,8 +56,7 @@ public class TestingInUnity
 
                 }
             }
-            if (count == 25) Assert.Pass();
-            else Assert.Fail();
+            Assert.AreEqual(count, 25);
         }
     }
     [Test]
@@ -84,8 +79,7 @@ public class TestingInUnity
                 }
             }
         }
-        if (count == 57) Assert.Pass();
-        else Assert.Fail();
+        Assert.AreEqual(count, 57);
     }
 
     [Test]
@@ -108,8 +102,7 @@ public class TestingInUnity
                 }
             }
         }
-        if (count == 85) Assert.Pass();
-        else Assert.Fail();
+        Assert.AreEqual(count, 85);
     }
 }
 

@@ -45,6 +45,7 @@ ExportedObj/
 *.opendb
 *.VC.db
 
+/CodeCoverage
 # Ignore unity version to avoid version conflicts.
 # ProjectSettings/ProjectVersion.txt
 

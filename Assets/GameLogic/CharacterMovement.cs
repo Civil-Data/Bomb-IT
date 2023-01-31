@@ -24,7 +24,7 @@ public class CharacterMovement : MonoBehaviour
          */
         Vector3 movement = new Vector3(inputX * currentSpeed, inputY * currentSpeed); //Movement with base speed, which is set to 10 here. Possible add speed modifier later.
 
-        transform.Translate(Move(inputX,inputY,Time.deltaTime, currentSpeed));
+        transform.Translate(Move(inputX, inputY, Time.deltaTime, currentSpeed));
     }
     public Vector3 Move(float h, float v, float deltaTime, float currentSpeed)
     {
