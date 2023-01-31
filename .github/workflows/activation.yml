@@ -38,7 +38,7 @@ jobs:
           name: Test results
           path: ${{ steps.myTestStep.outputs.artifactsPath }}
           
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v2.1.1
         if: always()
         with:
           name: Coverage results
