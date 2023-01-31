@@ -46,6 +46,9 @@ ExportedObj/
 *.opendb
 *.VC.db
 
+# Ignore unity version to avoid version conflicts.
+*.ProjectVersion.txt
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
