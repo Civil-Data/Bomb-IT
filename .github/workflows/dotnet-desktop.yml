@@ -27,16 +27,13 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-      
       - uses: game-ci/unity-test-runner@v2.1.1
         id: myTestStep
-      
       - uses: actions/upload-artifact@v2.1.1
         if: always()
         with:
           name: Test results
           path: ${{ steps.myTestStep.outputs.artifactsPath }}
-          
       - uses: actions/upload-artifact@v2.1.1
         if: always()
         with:
