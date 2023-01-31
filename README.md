@@ -1,4 +1,4 @@
-![example workflow] (https://github.com/Civil-Data/Bomb-IT/tree/main/.github/workflows)
+[![Aquire activation file](https://github.com/Civil-Data/Bomb-IT/actions/workflows/activation.yml/badge.svg)](https://github.com/Civil-Data/Bomb-IT/actions/workflows/activation.yml)
 
 Bomb-IT
 =======
