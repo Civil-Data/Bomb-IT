@@ -30,7 +30,6 @@
 ExportedObj/
 .consulo/
 *.csproj
-!Tests.csproj
 *.unityproj
 *.sln
 !Bomb-IT.sln
