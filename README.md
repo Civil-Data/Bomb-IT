@@ -1,3 +1,5 @@
+![example workflow] (https://github.com/Civil-Data/Bomb-IT/tree/main/.github/workflows)
+
 Bomb-IT
 =======
 Project is a school project in software development.
