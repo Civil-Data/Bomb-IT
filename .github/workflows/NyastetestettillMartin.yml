@@ -43,7 +43,7 @@ jobs:
             Library-test-project-
             Library-
       - name: Run tests
-        uses: Civil-Data/Bomb-IT/unity-test-runner@v2
+        uses: Civil-Data/Bomb-IT/unity-test-runner@v3
         id: testRunner
         with:
           testMode: ${{ matrix.testMode }}
