@@ -1,6 +1,9 @@
-name: Actions
+name: TESTING! 🎮
 
-on: [push, pull_request]
+on: workflow_dispatch
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
 jobs:
   testAllModes:
@@ -12,11 +15,14 @@ jobs:
         testMode:
           - playmode
           - editmode
+          
+    permissions: write-all
+    
     steps:
-      - uses: actions/checkout@v2.1.1
+      - uses: actions/checkout@v2
         with:
           lfs: true
-      - uses: actions/cache@v2.1.1
+      - uses: actions/cache@v2
         with:
           path: ${{ matrix.projectPath }}/Library
           key: Library-${{ matrix.projectPath }}
@@ -33,13 +39,78 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           checkName: ${{ matrix.testMode }} Test Results
           coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+my.assembly.*'
-      - uses: actions/upload-artifact@v2.1.1
+      - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: Test results for ${{ matrix.testMode }}
           path: ${{ steps.tests.outputs.artifactsPath }}
-      - uses: actions/upload-artifact@v2.1.1
+      - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: Coverage results for ${{ matrix.testMode }}
           path: ${{ steps.tests.outputs.coveragePath }}
+
+  super-lint:
+      # Name the Job
+      name: Lint code base
+      # Set the type of machine to run on
+      runs-on: ubuntu-latest  
+
+      permissions: write-all
+
+      steps:
+        - uses: actions/checkout@v3
+        - run: git pull
+        - run: dotnet tool install -g dotnet-format
+        - name: format
+          run: dotnet-format -f Assets/ -v d
+          working-directory: ${{env.working-directory}}
+        - name: Commit changes
+          uses: EndBug/add-and-commit@v5
+          with:
+            message: "[Bot] Automated dotnet-format update"
+            add: "*.cs"
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+  buildWindows:
+      needs: testAllModes
+      name: Build for Windows 🖥️
+      runs-on: ubuntu-latest
+      strategy:
+        fail-fast: false
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v3
+
+        - name: Create LFS file list
+          run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
+
+        - name: Restore LFS cache
+          uses: actions/cache@v3
+          id: lfs-cache
+          with:
+            path: .git/lfs
+            key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
+
+        - name: Git LFS Pull
+          run: |
+            git lfs pull
+            git add .
+            git reset --hard
+        - name: Restore Library cache
+          uses: actions/cache@v3
+          with:
+            path: Library
+            key: Library-build-StandaloneWindows64
+            restore-keys: |
+              Library-build-
+              Library-
+        - uses: game-ci/unity-builder@v2
+          with:
+            targetPlatform: StandaloneWindows64
+
+        - uses: actions/upload-artifact@v2
+          with:
+            name: build-StandaloneWindows64
+            path: build/StandaloneWindows64
