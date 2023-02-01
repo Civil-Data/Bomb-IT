@@ -1,6 +1,6 @@
 name: Build and tests 🎮
 
-on: workflow_dispatch
+on: [push, pull_request]
 
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
