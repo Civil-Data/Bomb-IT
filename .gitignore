@@ -46,7 +46,7 @@ ExportedObj/
 *.VC.db
 
 # Ignore code coverage info
-/CodeCoverage/
+# /CodeCoverage/
 
 # Ignore unity version to avoid version conflicts.
 # ProjectSettings/ProjectVersion.txt
