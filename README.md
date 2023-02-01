@@ -1,3 +1,5 @@
+[![Aquire activation file](https://github.com/Civil-Data/Bomb-IT/actions/workflows/activation.yml/badge.svg)](https://github.com/Civil-Data/Bomb-IT/actions/workflows/activation.yml)
+
 Bomb-IT
 =======
 Project is a school project in software development.
@@ -32,7 +34,7 @@ For starters we will just use visual studio as our build system but we will chan
 
 ## Requirements 
 * Unity Hub is needed to run our program you can download Unity Hub from this link: https://store.unity.com/download
-* When Unity is installed you also need to install Unity Editor version 2022.2.2f1
+* When Unity is installed you also need to install Unity Editor version 2022.2.4f1
 *  .NET 6 SDK for uses of dotnet or else you have to enter the following command in a terminal `dotnet tool install -g dotnet-format`
 
 ## Compiling and Running
