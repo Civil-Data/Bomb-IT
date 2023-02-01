@@ -19,10 +19,10 @@ jobs:
     permissions: write-all
     
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           lfs: true
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: ${{ matrix.projectPath }}/Library
           key: Library-${{ matrix.projectPath }}
@@ -106,11 +106,11 @@ jobs:
             restore-keys: |
               Library-build-
               Library-
-        - uses: game-ci/unity-builder@v2
+        - uses: game-ci/unity-builder@v3
           with:
             targetPlatform: StandaloneWindows64
 
-        - uses: actions/upload-artifact@v2
+        - uses: actions/upload-artifact@v3
           with:
             name: build-StandaloneWindows64
             path: build/StandaloneWindows64
