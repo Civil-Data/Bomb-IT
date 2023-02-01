@@ -1,5 +1,7 @@
 [![Aquire activation file](https://github.com/Civil-Data/Bomb-IT/actions/workflows/activation.yml/badge.svg)](https://github.com/Civil-Data/Bomb-IT/actions/workflows/activation.yml)
 
+[![Build and tests 🎮](https://github.com/Civil-Data/Bomb-IT/actions/workflows/NyastetestettillMartin.yml/badge.svg)](https://github.com/Civil-Data/Bomb-IT/actions/workflows/NyastetestettillMartin.yml)
+
 Bomb-IT
 =======
 Project is a school project in software development.
