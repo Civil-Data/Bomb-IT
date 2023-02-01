@@ -6,8 +6,8 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    float baseSpeed = 0.5f;
-    float speedModifier = 0.5f; //Remove later
+    float baseSpeed = 5f;
+    float speedModifier = 1.0f; //Remove later
     // Update is called once per frame
     void Update()
     {
