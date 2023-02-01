@@ -1,4 +1,4 @@
-name: GameCI Template 🎮
+name: Build and tests 🎮
 
 on: workflow_dispatch
 
