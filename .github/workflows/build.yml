@@ -19,10 +19,10 @@ jobs:
     permissions: write-all
     
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           lfs: true
-      - uses: actions/cache@v3
+      - uses: actions/cache@v2
         with:
           path: ${{ matrix.projectPath }}/Library
           key: Library-${{ matrix.projectPath }}
@@ -39,12 +39,12 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           checkName: ${{ matrix.testMode }} Test Results
           coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+my.assembly.*'
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v2
         if: always()
         with:
           name: Test results for ${{ matrix.testMode }}
           path: ${{ steps.tests.outputs.artifactsPath }}
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v2
         if: always()
         with:
           name: Coverage results for ${{ matrix.testMode }}
@@ -59,7 +59,7 @@ jobs:
       permissions: write-all
 
       steps:
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@v2
         - run: git pull
         - run: dotnet tool install -g dotnet-format
         - name: format
@@ -81,7 +81,7 @@ jobs:
         fail-fast: false
       steps:
         - name: Checkout code
-          uses: actions/checkout@v3
+          uses: actions/checkout@v2
 
         - name: Create LFS file list
           run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
@@ -99,18 +99,18 @@ jobs:
             git add .
             git reset --hard
         - name: Restore Library cache
-          uses: actions/cache@v3
+          uses: actions/cache@v2
           with:
             path: Library
             key: Library-build-StandaloneWindows64
             restore-keys: |
               Library-build-
               Library-
-        - uses: game-ci/unity-builder@v2
+        - uses: game-ci/unity-builder@v2.1.2
           with:
             targetPlatform: StandaloneWindows64
 
-        - uses: actions/upload-artifact@v3
+        - uses: actions/upload-artifact@v2
           with:
             name: build-StandaloneWindows64
             path: build/StandaloneWindows64
