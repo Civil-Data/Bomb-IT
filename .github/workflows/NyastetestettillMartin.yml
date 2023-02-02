@@ -8,7 +8,7 @@ env:
 jobs:
   testRunner:
     name: Test in ${{ matrix.testMode }} ✨
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
