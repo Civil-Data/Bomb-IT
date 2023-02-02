@@ -4,5 +4,7 @@ public enum Element
     TREE,
     ROCK,
     GROUND,
+    BOMB,
+    DANGERZONE,
     START
 }
