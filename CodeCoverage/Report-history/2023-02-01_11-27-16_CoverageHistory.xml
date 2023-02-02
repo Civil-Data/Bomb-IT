@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<coverage version="1.0" date="2023-02-01_11-27-16" tag="">
-  <assembly name="Tests">
-    <class name="TestingInUnity" coveredlines="74" coverablelines="74" totallines="108" coveredbranches="0" totalbranches="0" />
-  </assembly>
-</coverage>
