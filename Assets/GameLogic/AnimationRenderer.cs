@@ -1,14 +1,13 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimatedRenderer : MonoBehaviour
 {
     private int animationFrame;
     private SpriteRenderer frame_Renderer;
-    public Sprite idle;
-    public List<Sprite> sprites = new List<Sprite>();
+    public Sprite idleSprite;
+    public Sprite[] sprites;
     public float animationTime = 0.3f;
-    public bool loop = true, isPlaying = false;
+    public bool loop = true, idle = true;
 
 
     private void Awake()
@@ -27,7 +26,7 @@ public class AnimatedRenderer : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         //invokeReaping keeps Nextframe function in a loop
         InvokeRepeating(nameof(NextFrame), animationTime, animationTime);
@@ -37,16 +36,16 @@ public class AnimatedRenderer : MonoBehaviour
     {
         animationFrame++;
 
-        if (loop && animationFrame >= sprites.Count)
+        if (loop && animationFrame >= sprites.Length)
         {
             animationFrame = 0;
         }
 
-        if (isPlaying)
+        if (loop)
         {
-            frame_Renderer.sprite = idle;
+            frame_Renderer.sprite = idleSprite;
         }
-        else if (animationFrame >= 0 && animationFrame < sprites.Count)
+        else if (animationFrame >= 0 && animationFrame < sprites.Length)
         {
             frame_Renderer.sprite = sprites[animationFrame];
         }
