@@ -1,4 +1,4 @@
-name: Build and tests latest🎮
+name: Build and tests 🎮
 
 on: [push, pull_request]
 
