@@ -79,6 +79,9 @@ jobs:
       runs-on: ubuntu-latest
       strategy:
         fail-fast: false
+      
+      permissions: write-all
+        
       steps:
         - name: Checkout code
           uses: actions/checkout@v3.3.0
