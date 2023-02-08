@@ -38,17 +38,17 @@ jobs:
           artifactsPath: ${{ matrix.testMode }}-artifacts
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           checkName: ${{ matrix.testMode }} Test Results
-          coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+my.assembly.*'
+         # coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+my.assembly.*'
       - uses: actions/upload-artifact@v3.1.2
         if: always()
         with:
           name: Test results for ${{ matrix.testMode }}
           path: ${{ steps.tests.outputs.artifactsPath }}
-      - uses: actions/upload-artifact@v3.1.2
-        if: always()
-        with:
-          name: Coverage results for ${{ matrix.testMode }}
-          path: ${{ steps.tests.outputs.coveragePath }}
+     # - uses: actions/upload-artifact@v3.1.2
+     #   if: always()
+     #   with:
+     #     name: Coverage results for ${{ matrix.testMode }}
+     #     path: ${{ steps.tests.outputs.coveragePath }}
 
   super-lint:
       # Name the Job
@@ -109,8 +109,8 @@ jobs:
             restore-keys: |
               Library-build-
               Library-
-       # - uses: game-ci/unity-builder@v2.1.2
-        - uses: kuler90/build-unity@v1.0.4
+        - uses: game-ci/unity-builder@v2.1.2
+       # - uses: kuler90/build-unity@v1.0.4
           with:
             targetPlatform: StandaloneWindows64
 
