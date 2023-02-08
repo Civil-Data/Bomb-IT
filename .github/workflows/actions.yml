@@ -79,9 +79,6 @@ jobs:
       runs-on: ubuntu-latest
       strategy:
         fail-fast: false
-      
-     # permissions: write-all
-        
       steps:
         - name: Checkout code
           uses: actions/checkout@v3.3.0
@@ -110,7 +107,6 @@ jobs:
               Library-build-
               Library-
         - uses: game-ci/unity-builder@v2.1.2
-       # - uses: kuler90/build-unity@v1.0.4
           with:
             targetPlatform: StandaloneWindows64
 
