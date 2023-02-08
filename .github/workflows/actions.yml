@@ -13,8 +13,8 @@ jobs:
       fail-fast: false
       matrix:
         testMode:
-          # - playmode
-          - editmode
+          - playmode
+          # - editmode
           
     permissions: write-all
     
