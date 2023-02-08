@@ -60,7 +60,6 @@ jobs:
 
       steps:
         - uses: actions/checkout@v3.3.0
-        - run: git fetch main
        # - run: git pull
         - run: dotnet tool install -g dotnet-format
         - name: format
