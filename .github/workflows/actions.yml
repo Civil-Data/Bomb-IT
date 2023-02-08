@@ -109,7 +109,8 @@ jobs:
             restore-keys: |
               Library-build-
               Library-
-        - uses: game-ci/unity-builder@v2.1.2
+       # - uses: game-ci/unity-builder@v2.1.2
+        - uses: kuler90/build-unity@v1.0.4
           with:
             targetPlatform: StandaloneWindows64
 
