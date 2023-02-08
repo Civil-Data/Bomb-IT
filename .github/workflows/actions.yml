@@ -80,7 +80,7 @@ jobs:
       strategy:
         fail-fast: false
       
-      permissions: write-all
+     # permissions: write-all
         
       steps:
         - name: Checkout code
