@@ -60,7 +60,7 @@ jobs:
 
       steps:
         - uses: actions/checkout@v3.3.0
-        - run: git config pull.rebase true
+        - run: git config pull.rebase false  # merge
         - run: git pull origin main
         - run: dotnet tool install -g dotnet-format
         - name: format
