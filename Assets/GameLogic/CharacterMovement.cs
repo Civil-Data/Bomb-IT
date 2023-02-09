@@ -1,18 +1,17 @@
 //using Codice.Client.BaseCommands;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
     // Start is called before the first frame update
+    public string inputID;
     float baseSpeed = 5f;
     float speedModifier = 1.0f; //Remove later
     // Update is called once per frame
     void Update()
     {
-        float inputX = Input.GetAxis("Horizontal"); // Get the vertical and horizontal axis
-        float inputY = Input.GetAxis("Vertical");
+        float inputX = Input.GetAxis("Horizontal" + inputID); // Get the vertical and horizontal axis
+        float inputY = Input.GetAxis("Vertical" + inputID);
 
         //Add calculation of currentspeed to the playerclass. This is because player speed is individual
         float currentSpeed = baseSpeed * speedModifier;
