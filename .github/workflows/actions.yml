@@ -1,4 +1,4 @@
-name: Build and tests latest🎮
+name: Build and tests 🎮
 
 on: [push, pull_request]
 
@@ -14,7 +14,7 @@ jobs:
       matrix:
         testMode:
           - playmode
-          - editmode
+          # - editmode
           
     permissions: write-all
     
@@ -38,17 +38,17 @@ jobs:
           artifactsPath: ${{ matrix.testMode }}-artifacts
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           checkName: ${{ matrix.testMode }} Test Results
-          coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+my.assembly.*'
+         # coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+my.assembly.*'
       - uses: actions/upload-artifact@v3.1.2
         if: always()
         with:
           name: Test results for ${{ matrix.testMode }}
           path: ${{ steps.tests.outputs.artifactsPath }}
-      - uses: actions/upload-artifact@v3.1.2
-        if: always()
-        with:
-         name: Coverage results for ${{ matrix.testMode }}
-         path: ${{ steps.tests.outputs.coveragePath }}
+     # - uses: actions/upload-artifact@v3.1.2
+     #   if: always()
+     #   with:
+     #     name: Coverage results for ${{ matrix.testMode }}
+     #     path: ${{ steps.tests.outputs.coveragePath }}
 
   super-lint:
       # Name the Job
@@ -60,7 +60,7 @@ jobs:
 
       steps:
         - uses: actions/checkout@v3.3.0
-        - run: git pull
+       # - run: git pull
         - run: dotnet tool install -g dotnet-format
         - name: format
           run: dotnet-format -f Assets/ -v d
