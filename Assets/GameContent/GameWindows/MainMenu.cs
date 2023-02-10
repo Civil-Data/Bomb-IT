@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    private MapGenerator mapGenerator;
+    public MapGenerator mapGenerator;
+    public int playerSelect;
+    public int level;
 
     public void PlayGame()
     {
@@ -22,20 +25,25 @@ public class MainMenu : MonoBehaviour
     {
         if (val == 0)
         {
-            mapGenerator = new MapGenerator(2);
+            playerSelect = 2;
         }
-        if (val == 1)
+        else if (val == 1)
         {
-            mapGenerator = new MapGenerator(4);
+            playerSelect = 4;
         }
-        if (val == 2)
+        else if (val == 2)
         {
-            mapGenerator = new MapGenerator(6);
+            playerSelect = 6;
         }
     }
 
     public void OpenScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level " + level.ToString() + " " + playerSelect.ToString() );
+    }
+
+    public void randomMap()
+    {
+        mapGenerator = new MapGenerator(playerSelect);
     }
 }
