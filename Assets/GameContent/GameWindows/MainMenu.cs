@@ -1,5 +1,7 @@
+using Palmmedia.ReportGenerator.Core.Common;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,8 +9,8 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public MapGenerator mapGenerator;
-    public int playerSelect;
-    public int level;
+    public int players;
+    public string level;
 
     public void PlayGame()
     {
@@ -23,27 +25,28 @@ public class MainMenu : MonoBehaviour
 
     public void PlayerSelect(int val)
     {
+
         if (val == 0)
         {
-            playerSelect = 2;
+            players = 2;
         }
         else if (val == 1)
         {
-            playerSelect = 4;
+            players = 4;
         }
         else if (val == 2)
         {
-            playerSelect = 6;
+            players = 6;
         }
     }
 
     public void OpenScene()
     {
-        SceneManager.LoadScene("Level " + level.ToString() + " " + playerSelect.ToString() );
+        SceneManager.LoadScene("Level " + level.ToString() + " " + players.ToString() );
     }
 
     public void randomMap()
     {
-        mapGenerator = new MapGenerator(playerSelect);
+        mapGenerator = new MapGenerator(players);
     }
 }
