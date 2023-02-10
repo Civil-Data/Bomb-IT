@@ -1,9 +1,31 @@
 //using Codice.Client.BaseCommands;
-using Assets.GameLogic;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+<<<<<<< HEAD
+    // Start is called before the first frame update
+    public string inputID;
+    float baseSpeed = 5f;
+    float speedModifier = 1.0f; //Remove later
+    // Update is called once per frame
+    void Update()
+    {
+        float inputX = Input.GetAxis("Horizontal" + inputID); // Get the vertical and horizontal axis
+        float inputY = Input.GetAxis("Vertical" + inputID);
+
+        //Add calculation of currentspeed to the playerclass. This is because player speed is individual
+        float currentSpeed = baseSpeed * speedModifier;
+
+        /*
+         Example on how this will look in the future
+
+        float currentSpeed = player[].speed
+         */
+        Vector3 movement = new Vector3(inputX * currentSpeed, inputY * currentSpeed); //Movement with base speed, which is set to 10 here. Possible add speed modifier later.
+
+        transform.Translate(Move(inputX, inputY, Time.deltaTime, currentSpeed));
+=======
     //Public Variables will be changeble in Unity
     public float speed = 3f;
     public KeyCode Up = KeyCode.W;
@@ -26,6 +48,7 @@ public class CharacterMovement : MonoBehaviour
     {
         playerBody = GetComponent<Rigidbody2D>();
         lastMovement = MovementDown;
+>>>>>>> TheGoodOldBranch
     }
 
     private void Update()
