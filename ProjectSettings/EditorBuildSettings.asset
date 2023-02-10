@@ -8,43 +8,40 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Meny.unity
     guid: 8e71265418f7a6d46a004e1d2343923f
-  - enabled: 0
-    path: Assets/Scenes/Summer, 6players.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Beach2.unity
     guid: 9bf0ac372e66ac843b53d6dbeb581c10
   - enabled: 1
-    path: Assets/Scenes/Winter6.unity
-    guid: fbb0a0be8b484274e94568c08c359696
-  - enabled: 1
-    path: Assets/Scenes/Winter4.unity
-    guid: 5022d53ff77298e4985a85dda2ff5cef
-  - enabled: 1
-    path: Assets/Scenes/Winter2.unity
-    guid: 7480ca93f6e6003498823e5c5fe4d47d
-  - enabled: 1
-    path: Assets/Scenes/Summer6.unity
-    guid: 19626a5840376974dbe3a2a2ac9e4384
-  - enabled: 1
-    path: Assets/Scenes/Summer4.unity
-    guid: d2341f282d07c47438e86614468b1907
-  - enabled: 1
-    path: Assets/Scenes/Summer2.unity
-    guid: 3c14f9463acdb3a4da64a5f79f61c4e6
-  - enabled: 1
-    path: Assets/Scenes/Sport6.unity
-    guid: 0fad80484201a54459f4fe41d22f3e44
-  - enabled: 1
-    path: Assets/Scenes/Sport4.unity
-    guid: 3b345a2cec1b9734a8de5d633bba6c90
-  - enabled: 1
-    path: Assets/Scenes/Sport2.unity
-    guid: 6f10e9678185a3b429c35245fdfe0ee0
+    path: Assets/Scenes/Beach4.unity
+    guid: a7f9bd94f5b039d40bf23011f8751aba
   - enabled: 1
     path: Assets/Scenes/Beach6.unity
     guid: b9dc2d21d10808a4394e4d72fcb32ec0
   - enabled: 1
-    path: Assets/Scenes/Beach4.unity
-    guid: a7f9bd94f5b039d40bf23011f8751aba
+    path: Assets/Scenes/Sport2.unity
+    guid: 6f10e9678185a3b429c35245fdfe0ee0
+  - enabled: 1
+    path: Assets/Scenes/Sport4.unity
+    guid: 3b345a2cec1b9734a8de5d633bba6c90
+  - enabled: 1
+    path: Assets/Scenes/Sport6.unity
+    guid: 0fad80484201a54459f4fe41d22f3e44
+  - enabled: 1
+    path: Assets/Scenes/Summer2.unity
+    guid: 3c14f9463acdb3a4da64a5f79f61c4e6
+  - enabled: 1
+    path: Assets/Scenes/Summer4.unity
+    guid: d2341f282d07c47438e86614468b1907
+  - enabled: 1
+    path: Assets/Scenes/Summer6.unity
+    guid: 19626a5840376974dbe3a2a2ac9e4384
+  - enabled: 1
+    path: Assets/Scenes/Winter2.unity
+    guid: 7480ca93f6e6003498823e5c5fe4d47d
+  - enabled: 1
+    path: Assets/Scenes/Winter4.unity
+    guid: 5022d53ff77298e4985a85dda2ff5cef
+  - enabled: 1
+    path: Assets/Scenes/Winter6.unity
+    guid: fbb0a0be8b484274e94568c08c359696
   m_configObjects: {}

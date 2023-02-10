@@ -9,8 +9,11 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public MapGenerator mapGenerator;
-    public int players;
-    public string level;
+
+    [SerializeField]
+    private int players = 2;
+    //public int Players { get; set; } = 2;
+    //public string level;
 
     public void PlayGame()
     {
@@ -25,7 +28,6 @@ public class MainMenu : MonoBehaviour
 
     public void PlayerSelect(int val)
     {
-
         if (val == 0)
         {
             players = 2;
@@ -40,9 +42,9 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void OpenScene()
+    public void OpenScene(string level)
     {
-        SceneManager.LoadScene("Level " + level.ToString() + " " + players.ToString() );
+        SceneManager.LoadScene(level + players.ToString());
     }
 
     public void randomMap()

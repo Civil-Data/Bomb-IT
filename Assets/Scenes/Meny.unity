@@ -743,8 +743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc3fa1d838260242b87d0c009067bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSelect: 0
-  level: 0
+  players: 2
 --- !u!114 &227399519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -921,7 +920,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Map 2
+  m_Text: Sport
 --- !u!222 &266308982
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1784,7 +1783,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &568412591
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1797,11 +1796,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 682973238}
-  - {fileID: 1699926333}
   - {fileID: 1716959235}
   - {fileID: 1538002721}
   - {fileID: 1994294955}
+  - {fileID: 682973238}
+  - {fileID: 1699926333}
   - {fileID: 2141931919}
   - {fileID: 426370591}
   - {fileID: 700448850}
@@ -2297,9 +2296,8 @@ GameObject:
   - component: {fileID: 682973242}
   - component: {fileID: 682973241}
   - component: {fileID: 682973240}
-  - component: {fileID: 682973239}
   m_Layer: 5
-  m_Name: Map4
+  m_Name: Winter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2312,7 +2310,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682973237}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2326,20 +2324,6 @@ RectTransform:
   m_AnchoredPosition: {x: -107.457855, y: -112.00455}
   m_SizeDelta: {x: 81.0843, y: 73.9909}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &682973239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682973237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc3fa1d838260242b87d0c009067bc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSelect: 0
-  level: 4
 --- !u!114 &682973240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2384,16 +2368,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 682973239}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 227399518}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: OpenScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Winter
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &682973241
@@ -3250,7 +3234,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Map 3
+  m_Text: Summer
 --- !u!222 &1038109072
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5254,9 +5238,8 @@ GameObject:
   - component: {fileID: 1538002724}
   - component: {fileID: 1538002723}
   - component: {fileID: 1538002722}
-  - component: {fileID: 1538002725}
   m_Layer: 5
-  m_Name: Map2
+  m_Name: Sport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5327,16 +5310,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1538002725}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 227399518}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: OpenScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Sport
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1538002723
@@ -5377,20 +5360,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538002720}
   m_CullTransparentMesh: 1
---- !u!114 &1538002725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538002720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc3fa1d838260242b87d0c009067bc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSelect: 0
-  level: 2
 --- !u!1 &1539158758
 GameObject:
   m_ObjectHideFlags: 0
@@ -6094,7 +6063,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Map 1
+  m_Text: Beach
 --- !u!222 &1681885692
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6115,7 +6084,6 @@ GameObject:
   - component: {fileID: 1699926336}
   - component: {fileID: 1699926335}
   - component: {fileID: 1699926334}
-  - component: {fileID: 1699926337}
   m_Layer: 5
   m_Name: MapRandom
   m_TagString: Untagged
@@ -6188,7 +6156,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1699926337}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
         m_MethodName: OpenScene
         m_Mode: 1
@@ -6238,20 +6206,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699926332}
   m_CullTransparentMesh: 1
---- !u!114 &1699926337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699926332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc3fa1d838260242b87d0c009067bc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSelect: 0
-  level: 5
 --- !u!1 &1716959234
 GameObject:
   m_ObjectHideFlags: 0
@@ -6264,9 +6218,8 @@ GameObject:
   - component: {fileID: 1716959239}
   - component: {fileID: 1716959238}
   - component: {fileID: 1716959237}
-  - component: {fileID: 1716959236}
   m_Layer: 5
-  m_Name: Map1
+  m_Name: Beach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6293,20 +6246,6 @@ RectTransform:
   m_AnchoredPosition: {x: -107.46, y: -28}
   m_SizeDelta: {x: 81.0843, y: 73.9909}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1716959236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1716959234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc3fa1d838260242b87d0c009067bc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSelect: 0
-  level: 1
 --- !u!114 &1716959237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6351,16 +6290,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1716959236}
+      - m_Target: {fileID: 227399518}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: OpenScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Beach
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1716959238
@@ -6730,9 +6669,8 @@ GameObject:
   - component: {fileID: 1994294958}
   - component: {fileID: 1994294957}
   - component: {fileID: 1994294956}
-  - component: {fileID: 1994294959}
   m_Layer: 5
-  m_Name: Map3
+  m_Name: Summer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6803,16 +6741,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1994294959}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 227399518}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: OpenScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Summer
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1994294957
@@ -6853,20 +6791,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994294954}
   m_CullTransparentMesh: 1
---- !u!114 &1994294959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994294954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc3fa1d838260242b87d0c009067bc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSelect: 0
-  level: 3
 --- !u!1 &2021181708
 GameObject:
   m_ObjectHideFlags: 0
@@ -7072,7 +6996,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Map 4
+  m_Text: Winter
 --- !u!222 &2029196368
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7173,7 +7097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2057479285
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7209,8 +7133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc3fa1d838260242b87d0c009067bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSelect: 0
-  level: 0
+  players: 2
 --- !u!1 &2066845199
 GameObject:
   m_ObjectHideFlags: 0
