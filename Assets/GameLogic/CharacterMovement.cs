@@ -1,4 +1,5 @@
 //using Codice.Client.BaseCommands;
+using Assets.GameLogic;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
