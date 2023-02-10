@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 100762805}
   - component: {fileID: 100762804}
   m_Layer: 0
-  m_Name: Summer, 6players
+  m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b71d3973c8453941be85b52de2ce236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputID: 
 --- !u!212 &542743786
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -444,7 +445,7 @@ GameObject:
   - component: {fileID: 906370198}
   - component: {fileID: 906370197}
   m_Layer: 0
-  m_Name: Background1
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4595,7 +4596,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 282930447
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
