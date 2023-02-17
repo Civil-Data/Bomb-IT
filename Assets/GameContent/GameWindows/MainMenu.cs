@@ -1,11 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    private MapGenerator mapGenerator;
+    public MapGenerator mapGenerator;
+
+    [SerializeField]
+    private int players = 2;
+    //public int Players { get; set; } = 2;
+    //public string level;
 
     public void PlayGame()
     {
@@ -22,20 +25,25 @@ public class MainMenu : MonoBehaviour
     {
         if (val == 0)
         {
-            mapGenerator = new MapGenerator(2);
+            players = 2;
         }
-        if (val == 1)
+        else if (val == 1)
         {
-            mapGenerator = new MapGenerator(4);
+            players = 4;
         }
-        if (val == 2)
+        else if (val == 2)
         {
-            mapGenerator = new MapGenerator(6);
+            players = 6;
         }
     }
 
-    public void OpenScene()
+    public void OpenScene(string level)
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(level + players.ToString());
+    }
+
+    public void randomMap()
+    {
+        mapGenerator = new MapGenerator(players);
     }
 }
