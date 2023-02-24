@@ -60,7 +60,7 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-    private void MakeMove(Vector2 newDirection, AnimatedRenderer directionAnimation)
+    public void MakeMove(Vector2 newDirection, AnimatedRenderer directionAnimation)
     {
         move = newDirection;
         MovementUp.enabled = directionAnimation == MovementUp;
