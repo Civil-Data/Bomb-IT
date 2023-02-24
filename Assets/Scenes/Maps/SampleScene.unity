@@ -4546,6 +4546,7 @@ GameObject:
   - component: {fileID: 970776231}
   - component: {fileID: 970776232}
   - component: {fileID: 970776233}
+  - component: {fileID: 970776234}
   m_Layer: 0
   m_Name: DOWN
   m_TagString: Untagged
@@ -4641,6 +4642,27 @@ MonoBehaviour:
   animationTime: 0.1
   loop: 1
   idle: 1
+--- !u!114 &970776234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970776230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b71d3973c8453941be85b52de2ce236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  Up: 119
+  Down: 115
+  Left: 97
+  Right: 100
+  MovementUp: {fileID: 0}
+  MovementDown: {fileID: 0}
+  MovementLeft: {fileID: 0}
+  MovementRight: {fileID: 0}
 --- !u!1 &1054705958
 GameObject:
   m_ObjectHideFlags: 0
