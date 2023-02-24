@@ -5,7 +5,7 @@ public class TestingInUnity
 {
 
     CharacterMovement characterMovement = new CharacterMovement();
-    Player player = new Player();
+    HumanPlayer humanPlayer = new HumanPlayer();
 
     /*
      * Move function which shall be tested: public Vector3 Move(float h, float v, float deltaTime, float currentSpeed)
@@ -27,13 +27,13 @@ public class TestingInUnity
     [Test]
     public void KillPlayerTest()
     {
-        Assert.IsFalse(player.KillPlayer()); // False then Method Works
+        Assert.IsFalse(humanPlayer.KillPlayer()); // False then Method Works
     }
 
     [Test]
     public void TestGodModeHealth()
     {
-        Assert.AreEqual(player.health = player.GetALife(3), 10000000);
+        Assert.AreEqual(humanPlayer.health = humanPlayer.GetALife(3), 10000000);
     }
 
     [Test]
