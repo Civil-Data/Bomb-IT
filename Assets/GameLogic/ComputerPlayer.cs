@@ -1,13 +1,14 @@
-﻿using GameLogic;
-using System;
+﻿using System;
 
 namespace Assets.GameLogic
 {
-    internal class ComputerPlayer : Player
+    internal class ComputerPlayer
     {
         private string playerName;
         private DIRECTIONS walkingDirection;
         private Random random;
+        public int X { get; set; }
+        public int Y { get; set; }
 
         private enum DIRECTIONS
         {
@@ -31,7 +32,7 @@ namespace Assets.GameLogic
             // Initialize Computer configuration
         }
 
-        public override void PlaceBombRequest(Element[,]? gameBoard)
+        public void PlaceBombRequest(Element[,]? gameBoard)
         {
             if (gameBoard[X, Y] == Element.GROUND)
             {
@@ -95,7 +96,7 @@ namespace Assets.GameLogic
         }
 
         // Could possibly be virtual in Player class
-        public override void UseItem()
+        public void UseItem()
         {
             // If item is usable, what type of item is it and how can it be used?
             // If a situation where the item is useful accours, then use it.

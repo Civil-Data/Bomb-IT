@@ -5,6 +5,7 @@ public class TestingInUnity
 
     CharacterMovement characterMovement = new CharacterMovement();
 
+
     /*
      * Move function which shall be tested: public Vector3 Move(float h, float v, float deltaTime, float currentSpeed)
      * 
@@ -20,6 +21,7 @@ public class TestingInUnity
      * 
      * All the movement test works like this except when you test the negative movement. Where you inject negative values and check if the value of the X or Y axis has decreased and is less than 0.1
      */
+
 
 
     [Test]
