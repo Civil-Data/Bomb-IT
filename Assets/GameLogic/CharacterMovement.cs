@@ -2,8 +2,10 @@
 using Assets.GameLogic;
 using UnityEngine;
 
+
 public class CharacterMovement : MonoBehaviour
 {
+
     //Public Variables will be changeble in Unity
     public float speed = 3f;
     public KeyCode Up = KeyCode.W;
