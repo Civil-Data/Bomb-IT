@@ -1,11 +1,10 @@
-using GameLogic;
 using NUnit.Framework;
 
 public class TestingInUnity
 {
 
     CharacterMovement characterMovement = new CharacterMovement();
-    HumanPlayer humanPlayer = new HumanPlayer();
+
 
     /*
      * Move function which shall be tested: public Vector3 Move(float h, float v, float deltaTime, float currentSpeed)
@@ -24,17 +23,6 @@ public class TestingInUnity
      */
 
 
-    [Test]
-    public void KillPlayerTest()
-    {
-        Assert.IsFalse(humanPlayer.KillPlayer()); // False then Method Works
-    }
-
-    [Test]
-    public void TestGodModeHealth()
-    {
-        Assert.AreEqual(humanPlayer.health = humanPlayer.GetALife(3), 10000000);
-    }
 
     [Test]
     public void TestPositiveXAxis()
