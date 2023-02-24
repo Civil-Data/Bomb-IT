@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+[![Build and tests 🎮](https://github.com/Civil-Data/Bomb-IT/actions/workflows/actions.yml/badge.svg)](https://github.com/Civil-Data/Bomb-IT/actions/workflows/actions.yml)
+>>>>>>> c75dcf6bc72e0987640cb6f40112409902a08f95
 
 Bomb-IT
 =======
@@ -78,6 +82,9 @@ For further statistics open up the **index.html** file in the directory where th
 
 ## Kanban Board
 * https://github.com/orgs/Civil-Data/projects/1/views/1
+
+## CI
+* Right now, we are experiencing problems with unity test runner v.2.1.1. Therefore, all contributors need to make sure to run the tests singlehanded before pushing their changes. We have internally decided that you must declare when doing PRs that test is done before we will approve the PRs.
 
 ## List of names in Group 5
 * Martin Nilsson, **Github:** MarrisSparrisNilsson

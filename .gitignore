@@ -45,7 +45,7 @@ ExportedObj/
 *.opendb
 *.VC.db
 
-# Ignore code coverage info
+Ignore code coverage info
 /CodeCoverage/
 
 # Ignore unity version to avoid version conflicts.

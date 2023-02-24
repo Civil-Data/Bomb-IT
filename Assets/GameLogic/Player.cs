@@ -1,28 +1,21 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace GameLogic
 {
-
-    public class Player : MonoBehaviour
+    public abstract class Player
     {
         public List<Bomb> n_Bomb { get; set; }
         public float speed { get; set; }
         public bool godMode { get; set; }
         public bool strongBoi { get; set; } = false;
 
+        public int X { get; set; }
 
-        // Start is called before the first frame update
-        void Start()
-        {
+        public int Y { get; set; }
 
-        }
+        public abstract void PlaceBombRequest(Element[,]? gameBoard);
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        public abstract void UseItem();
     }
 }
 
