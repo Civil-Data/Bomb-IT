@@ -1,10 +1,8 @@
-using GameContent;
-using System.Collections;
-using System.Collections.Generic;
+using GameContent.Interface;
 using UnityEngine;
 using Random = System.Random;
 
-public class ComputerPlayer : CharacterMovement, IPlayer
+public class ComputerPlayer : MonoBehaviour, IPlayer
 {
     private int nBomb;
     public int NBombs { get => nBomb; set => nBomb = value; }
@@ -80,7 +78,7 @@ public class ComputerPlayer : CharacterMovement, IPlayer
     {
         //if (true)
         //{
-        MakeMove(Vector2.right, MovementRight);
+        //MakeMove(Vector2.right, MovementRight);
         //}
     }
 

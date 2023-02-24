@@ -12,8 +12,8 @@ public class PlayerPowerUps : PowerUp
             GameObject gb = collision2D.gameObject;
             Player player = gb.GetComponent<Player>();
 
-            if (player.speed < 1)
-                player.speed = UnityEngine.Random.Range(1.5f, 3f);
+            if (player.Speed < 1)
+                player.Speed = UnityEngine.Random.Range(1.5f, 3f);
 
             //PowerupExpires()
             Destroy(gb);
@@ -28,8 +28,8 @@ public class PlayerPowerUps : PowerUp
             GameObject gb = collision2D.gameObject;
             Player player = gb.GetComponent<Player>();
 
-            if (player.strongBoi != true)
-                player.strongBoi = true;
+            if (player.StrongBoi != true)
+                player.StrongBoi = true;
 
             //PowerupExpires()
             Destroy(gb);
