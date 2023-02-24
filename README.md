@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-=======
+
 [![Build and tests 🎮](https://github.com/Civil-Data/Bomb-IT/actions/workflows/actions.yml/badge.svg)](https://github.com/Civil-Data/Bomb-IT/actions/workflows/actions.yml)
->>>>>>> c75dcf6bc72e0987640cb6f40112409902a08f95
+
 
 Bomb-IT
 =======
