@@ -1,6 +1,4 @@
-
 [![Build and tests 🎮](https://github.com/Civil-Data/Bomb-IT/actions/workflows/actions.yml/badge.svg)](https://github.com/Civil-Data/Bomb-IT/actions/workflows/actions.yml)
-
 
 Bomb-IT
 =======
