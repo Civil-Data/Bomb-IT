@@ -1,34 +1,9 @@
-using GameContent.Interface;
+using GameLogic;
 using UnityEngine;
 using Random = System.Random;
 
 public class ComputerPlayer : MonoBehaviour, IPlayer
 {
-    private int nBomb;
-    public int NBombs { get => nBomb; set => nBomb = value; }
-
-    private float speed;
-    public float Speed { get => speed; set => speed = value; }
-
-    private bool godMode;
-    public bool GodMode { get => godMode; set => godMode = value; }
-
-    private bool strongBoi;
-    public bool StrongBoi { get => strongBoi; set => strongBoi = value; }
-
-    private int x;
-    public int X { get => x; set => x = value; }
-
-    private int y;
-    public int Y { get => y; set => y = value; }
-
-
-    private DIRECTIONS walkingDirection;
-
-    private string playerName;
-    private Random random;
-
-
     private enum DIRECTIONS
     {
         NORTH,
@@ -36,6 +11,13 @@ public class ComputerPlayer : MonoBehaviour, IPlayer
         SOUTH,
         WEST
     }
+    private DIRECTIONS walkingDirection;
+
+    private string playerName;
+    private Random random;
+
+    Player player = new Player();
+
 
     // Start is called before the first frame update
     void Start()
@@ -54,10 +36,10 @@ public class ComputerPlayer : MonoBehaviour, IPlayer
 
     public void PlaceBombRequest(Element[,]? gameBoard)
     {
-        if (gameBoard[X, Y] == Element.GROUND)
+        if (gameBoard[player.X, player.Y] == Element.GROUND)
         {
             // Place the bomb on the players current position.
-            gameBoard[X, Y] = Element.BOMB;
+            gameBoard[player.X, player.Y] = Element.BOMB;
 
             // gameBoard = DrawDangerZones(gameBoard, X, Y, bombPower);
 
@@ -86,19 +68,19 @@ public class ComputerPlayer : MonoBehaviour, IPlayer
     {
         // Write logic for which directions the computer should walk.
         // This should act like the the computers walking controls instead of keyboard.
-        if (gameBoard[X, Y - 1] == Element.GROUND) // Can Walk NORTH?
+        if (gameBoard[player.X, player.Y - 1] == Element.GROUND) // Can Walk NORTH?
         {
             walkingDirection = DIRECTIONS.EAST;
         }
-        else if (gameBoard[X + 1, Y] == Element.GROUND) // Can Walk EAST?
+        else if (gameBoard[player.X + 1, player.Y] == Element.GROUND) // Can Walk EAST?
         {
 
         }
-        else if (gameBoard[X, Y + 1] == Element.GROUND) // Can Walk SOUTH?
+        else if (gameBoard[player.X, player.Y + 1] == Element.GROUND) // Can Walk SOUTH?
         {
 
         }
-        else if (gameBoard[X, Y - 1] == Element.GROUND) // Can Walk WEST?
+        else if (gameBoard[player.X, player.Y - 1] == Element.GROUND) // Can Walk WEST?
         {
 
         }
@@ -107,7 +89,7 @@ public class ComputerPlayer : MonoBehaviour, IPlayer
     private void Escape(Element[,]? gameBoard)
     {
         // Find an escape route for the player to avoid its own bomb or enemy bombs.
-        if (gameBoard[X, Y] == Element.DANGERZONE)
+        if (gameBoard[player.X, player.Y] == Element.DANGERZONE)
         {
             // Walk = Random()
         }

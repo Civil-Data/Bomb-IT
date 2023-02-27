@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Assets.GameLogic
+namespace GameLogic
 {
-    internal class ComputerPlayer
+    internal class ComputerPlayer : Player
     {
         private string playerName;
         private DIRECTIONS walkingDirection;

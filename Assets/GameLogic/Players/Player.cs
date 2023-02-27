@@ -1,13 +1,12 @@
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace GameLogic
 {
-    public abstract class Player
+    public class Player
     {
         public int NBomb { get; set; }
         public int Id { get; set; } // Do we need this?
-        public int BombStrengt { get; set; }
+        public int BombRange { get; set; }
         public int Health { get; set; }
         public float Speed { get; set; }
         public bool IsAlive { get; set; }
@@ -16,35 +15,35 @@ namespace GameLogic
         public int X { get; set; }
         public int Y { get; set; }
 
-        /*
+
         // Start is called before the first frame update
-        void Start()
-        {
-            Health = GetALife(1);
-            BombStrengt = PlayerBombRange(1);
-        }
+        //void Start()
+        //{
+        //    health = GetALife(1);
+        //    bombStrengt = PlayerBombRange(1, bombStrengt);
+        //}
 
         // Update is called once per frame
-        void Update()
-        {
-            //BombStrengt = PlayerBombRange(0); // check range
-            /*
-            if (Health == 0) //isDead
-            {
-                IsAlive = KillPlayer();
-            }
-            */
-        /*
-            if (GodMode == true)
-            {
-                while (true == GodMode) // Will perhaps freeze this script?
-                {
-                    GodModeEffect(); // Turn bool to false
-                }
-            }
+        //void Update()
+        //{
+        //    bombStrengt = PlayerBombRange(0,bombStrengt); // check range
 
-        }
-        */
+        //    if (Health == 0) //isDead
+        //    {
+        //        IsAlive = KillPlayer();
+        //    }
+
+
+        //    if (GodMode == true)
+        //    {
+        //        while (true == GodMode) // Will perhaps freeze this script?
+        //        {
+        //            GodModeEffect(); // Turn bool to false
+        //        }
+        //    }
+
+        //}
+
         public async void GodModeEffect()
         {
             Health = GetALife(3); // High on life!
@@ -84,13 +83,13 @@ namespace GameLogic
             }
         }
 
-        public int PlayerBombRange(int isStart)
+        public int PlayerBombRange(int isStart, int bombStrengt) // 1 = starting power, 2 = increase range by one, 0 = just checking
         {
             if (isStart == 1) // Initial pwr
             {
                 return BombStrengt = 2;
             }
-            else if (isStart == 0) //increase pwr
+            else if (isStart == 2) //increase pwr
             {
                 return (BombStrengt += 1);
             }
