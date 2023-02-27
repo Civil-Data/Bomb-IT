@@ -1,12 +1,8 @@
-//using Codice.Client.BaseCommands;
 using Assets.GameLogic;
-using GameLogic;
 using UnityEngine;
 
-
-public class CharacterMovement : MonoBehaviour
+public class HumanPlayer : MonoBehaviour
 {
-
     //Public Variables will be changeble in Unity
     public float speed = 3f;
     public KeyCode Up = KeyCode.W;
@@ -17,14 +13,18 @@ public class CharacterMovement : MonoBehaviour
     public Rigidbody2D playerBody { get; set; }
     private Vector2 move = Vector2.down;
 
-    public Player player;
-
     //Animation
     public AnimatedRenderer MovementUp;
     public AnimatedRenderer MovementDown;
     public AnimatedRenderer MovementLeft;
     public AnimatedRenderer MovementRight;
     private AnimatedRenderer lastMovement;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
 
     //Gets Component from player
     private void Awake()
@@ -37,27 +37,6 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKey(Up))
-        //{
-        //    MakeMove(Vector2.up, MovementUp);
-        //}
-        //else if (Input.GetKey(Down))
-        //{
-        //    MakeMove(Vector2.down, MovementDown);
-        //}
-        //else if (Input.GetKey(Left))
-        //{
-        //    MakeMove(Vector2.left, MovementLeft);
-        //}
-        //else if (Input.GetKey(Right))
-        //{
-        //    MakeMove(Vector2.right, MovementRight);
-        //}
-        //else
-        //{
-        //    MakeMove(Vector2.zero, lastMovement);
-        //}
-
         Move();
     }
 
@@ -68,17 +47,16 @@ public class CharacterMovement : MonoBehaviour
         playerBody.MovePosition(pos + translationMovement);
     }
 
-
     public void MakeMove(Vector2 newDirection, AnimatedRenderer directionAnimation)
     {
         move = newDirection;
-        //MovementUp.enabled = directionAnimation == MovementUp;
-        //MovementDown.enabled = directionAnimation == MovementDown;
-        //MovementLeft.enabled = directionAnimation == MovementLeft;
-        //MovementRight.enabled = directionAnimation == MovementRight;
+        MovementUp.enabled = directionAnimation == MovementUp;
+        MovementDown.enabled = directionAnimation == MovementDown;
+        MovementLeft.enabled = directionAnimation == MovementLeft;
+        MovementRight.enabled = directionAnimation == MovementRight;
 
-        //lastMovement = directionAnimation;
-        //lastMovement.idle = move == Vector2.zero;
+        lastMovement = directionAnimation;
+        lastMovement.idle = move == Vector2.zero;
     }
 
     public void Move()
@@ -103,13 +81,5 @@ public class CharacterMovement : MonoBehaviour
         {
             MakeMove(Vector2.zero, lastMovement);
         }
-    }
-
-
-    public Vector3 Move(float h, float v, float deltaTime, float currentSpeed)
-    {
-        float x = h * currentSpeed * deltaTime;
-        float y = v * currentSpeed * deltaTime;
-        return new Vector3(x, y, 0);
     }
 }

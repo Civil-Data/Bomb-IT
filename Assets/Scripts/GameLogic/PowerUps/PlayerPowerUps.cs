@@ -5,15 +5,15 @@ public class PlayerPowerUps : PowerUp
 {
     public float bombFactor = 2f;
 
-    protected void SpeedPowerIncrease(Collision2D collision2D)
+    protected void IncreasePlayerSpeed(Collision2D collision2D)
     {
         if (collision2D.rigidbody.tag == "Player")
         {
             GameObject gb = collision2D.gameObject;
             Player player = gb.GetComponent<Player>();
 
-            if (player.speed < 1)
-                player.speed = UnityEngine.Random.Range(1.5f, 3f);
+            if (player.Speed < 1)
+                player.Speed = UnityEngine.Random.Range(1.5f, 3f);
 
             //PowerupExpires()
             Destroy(gb);
@@ -21,45 +21,45 @@ public class PlayerPowerUps : PowerUp
     }
 
 
-    protected void PushableBombPowerUp(Collision2D collision2D)
+    protected void GetPushBomb_PowerUp(Collision2D collision2D)
     {
         if (collision2D.rigidbody.tag == "Player")
         {
             GameObject gb = collision2D.gameObject;
             Player player = gb.GetComponent<Player>();
 
-            if (player.strongBoi != true)
-                player.strongBoi = true;
+            if (player.StrongBoi != true)
+                player.StrongBoi = true;
 
             //PowerupExpires()
             Destroy(gb);
         }
     }
 
-    public void RandomPowerup(Collision2D collision2D)
+    public void GetRandomPowerup(Collision2D collision2D)
     {
 
         if (collision2D.rigidbody.tag == "Player")
         {
             GameObject gb = collision2D.gameObject;
             Player player = gb.GetComponent<Player>();
-            BombPowerUps pb = new();
+            BombPowerUps bombPowerUp = new();
 
             int random = Random.Range(1, 4);
             switch (random)
             {
                 case 1:
-                    PushableBombPowerUp(collision2D);
+                    GetPushBomb_PowerUp(collision2D);
                     break;
                 case 2:
-                    SpeedPowerIncrease(collision2D);
+                    IncreasePlayerSpeed(collision2D);
                     break;
 
                 case 3:
-                    pb.BombAdd(collision2D);
+                    bombPowerUp.AddBomb(collision2D);
                     break;
                 case 4:
-                    pb.BombPower(collision2D);
+                    bombPowerUp.IncreaseBombRange(collision2D);
                     break;
 
             }

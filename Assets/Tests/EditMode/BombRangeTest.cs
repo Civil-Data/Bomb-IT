@@ -6,7 +6,7 @@ public class BombRangeTest
     Player playerClass = new Player();
 
     [Test]
-    public void TestInitialBombStrength()
+    public void TestInitialBombRange()
     {
         int start = 0;
         start = playerClass.PlayerBombRange(1, start);
@@ -14,7 +14,7 @@ public class BombRangeTest
     }
 
     [Test]
-    public void TestIncreaseOfBombStrength()
+    public void TestIncreaseOfBombRange()
     {
         int bomb = 2; //Initial Test of bomb
         Assert.Greater(bomb = playerClass.PlayerBombRange(2, bomb), 1); // Test so range do not go down
