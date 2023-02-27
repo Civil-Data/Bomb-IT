@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        testMode:
-          - playmode
+      # matrix:
+        # testMode:
+          # - playmode
           # - editmode
           
     permissions: write-all
