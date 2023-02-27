@@ -83,17 +83,17 @@ namespace GameLogic
             }
         }
 
-        public int PlayerBombRange(int isStart, int bombStrengt) // 1 = starting power, 2 = increase range by one, 0 = just checking
+        public int PlayerBombRange(int isStart, int bombRange) // 1 = starting power, 2 = increase range by one, 0 = just checking
         {
             if (isStart == 1) // Initial pwr
             {
-                return BombStrengt = 2;
+                return bombRange = 2;
             }
             else if (isStart == 2) //increase pwr
             {
-                return (BombStrengt += 1);
+                return (bombRange += 1);
             }
-            else return BombStrengt;
+            else return bombRange;
         }
 
 
