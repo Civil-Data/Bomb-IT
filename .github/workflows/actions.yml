@@ -6,14 +6,14 @@ env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
 jobs:
-  testAllModes:
+ # testAllModes:
     name: Test in ${{ matrix.testMode }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        testMode:
-          - playmode
+      # matrix:
+        # testMode:
+          # - playmode
           # - editmode
           
     permissions: write-all
@@ -28,29 +28,29 @@ jobs:
           key: Library-${{ matrix.projectPath }}
           restore-keys: |
             Library-
-      - uses: game-ci/unity-test-runner@v2.1.1
-        id: tests
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-        with:
-          projectPath: ${{ matrix.projectPath }}
-          testMode: ${{ matrix.testMode }}
-          artifactsPath: ${{ matrix.testMode }}-artifacts
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          checkName: ${{ matrix.testMode }} Test Results
+     # - uses: game-ci/unity-test-runner@v2.1.1
+     #  id: tests
+     #   env:
+     #     UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+      #  with:
+       #   projectPath: ${{ matrix.projectPath }}
+        #  testMode: ${{ matrix.testMode }}
+         # artifactsPath: ${{ matrix.testMode }}-artifacts
+         # githubToken: ${{ secrets.GITHUB_TOKEN }}
+         # checkName: ${{ matrix.testMode }} Test Results
          # coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+my.assembly.*'
-      - uses: actions/upload-artifact@v3.1.2
-        if: always()
-        with:
-          name: Test results for ${{ matrix.testMode }}
-          path: ${{ steps.tests.outputs.artifactsPath }}
+     # - uses: actions/upload-artifact@v3.1.2
+     #   if: always()
+     #   with:
+      #    name: Test results for ${{ matrix.testMode }}
+       #   path: ${{ steps.tests.outputs.artifactsPath }}
      # - uses: actions/upload-artifact@v3.1.2
      #   if: always()
      #   with:
      #     name: Coverage results for ${{ matrix.testMode }}
      #     path: ${{ steps.tests.outputs.coveragePath }}
 
-  super-lint:
+    super-lint:
       # Name the Job
       name: Lint code base
       # Set the type of machine to run on

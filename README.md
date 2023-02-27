@@ -55,7 +55,7 @@ It should now look something like this:
 5. Close the Package Manager after the installation is done and go to: **Window > Analysis > Code Coverage.** This will open the Code Cover Manager.
 6. Enable Code Coverage by enabling the checkbox **¨Enable Code Coverage"**
 7. **Optional:** Change the directory where you want the code coverage Result and Report to go to.
-8. Make sure all the items except the "Tests" item in are unchecked in the **Included Assemblies**  
+8. Make sure all the items except the "Tests and GameAssembly" item in are unchecked in the **Included Assemblies**  
 ![image](https://user-images.githubusercontent.com/58775643/215226026-79885c84-a358-4bda-8306-503bc005ec1a.png)
 
 9. These Reports will be generated when you run the unit tests. To check the code coverage information open up the directory where these are generated and open the **index.html** file in a **web browser**.
