@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using UnityEngine.SceneManagement;
 
 public class MapGeneratorTests
 {
