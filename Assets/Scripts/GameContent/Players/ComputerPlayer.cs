@@ -136,7 +136,7 @@ public class ComputerPlayer : MonoBehaviour, IPlayer
 
     // If the player continue walking in the same direction he might get stuck.
     // Therefor this function will randomly change the players walking direction for example every 3 seconds.
-    private void ChangeWalkDirection()
+    public void ChangeWalkDirection()
     {
         timer += Time.deltaTime;
         Debug.Log($"\nTimer: {timer}");
