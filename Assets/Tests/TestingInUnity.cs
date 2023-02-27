@@ -1,10 +1,11 @@
+using GameLogic;
 using NUnit.Framework;
 
 public class TestingInUnity
 {
 
     CharacterMovement characterMovement = new CharacterMovement();
-
+    Player playerClass = new Player();
 
     /*
      * Move function which shall be tested: public Vector3 Move(float h, float v, float deltaTime, float currentSpeed)
@@ -21,6 +22,46 @@ public class TestingInUnity
      * 
      * All the movement test works like this except when you test the negative movement. Where you inject negative values and check if the value of the X or Y axis has decreased and is less than 0.1
      */
+
+    /*
+        public int PlayerBombRange(int isStart) // 1 = starting power, 0 = increase range by one
+        {
+            if (isStart == 1) // Initial pwr
+            {
+                return bombStrengt = 2;
+            }
+            else if (isStart == 0) //increase pwr
+            {
+                return (bombStrengt += 1);
+            }
+            else return bombStrengt;
+        }
+     */
+
+
+    [Test]
+    public void TestInitialBombStrength()
+    {
+        int start = 0;
+        start = playerClass.PlayerBombRange(1, start);
+        Assert.AreEqual(2, start);
+    }
+
+    [Test]
+    public void TestIncreaseOfBombStrength()
+    {
+        int bomb = 2; //Initial Test of bomb
+        Assert.Greater(bomb = playerClass.PlayerBombRange(2, bomb), 1); // Test so range do not go down
+
+        Assert.AreEqual(4, bomb = playerClass.PlayerBombRange(2, bomb)); // Tests if bombrangegoes up
+        Assert.AreEqual(5, bomb = playerClass.PlayerBombRange(2, bomb));
+        Assert.AreEqual(6, bomb = playerClass.PlayerBombRange(2, bomb));
+        Assert.AreEqual(7, bomb = playerClass.PlayerBombRange(2, bomb));
+        Assert.AreEqual(8, bomb = playerClass.PlayerBombRange(2, bomb));
+        Assert.AreEqual(9, bomb = playerClass.PlayerBombRange(2, bomb));
+        Assert.AreEqual(10, bomb = playerClass.PlayerBombRange(2, bomb));
+    }
+
 
 
 

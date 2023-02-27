@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 namespace GameLogic
 {
 
-    public abstract class Player
+    public class Player
     {
 
 
@@ -22,13 +22,13 @@ namespace GameLogic
         void Start()
         {
             health = GetALife(1);
-            bombStrengt = PlayerBombRange(1);
+            bombStrengt = PlayerBombRange(1, bombStrengt);
         }
 
         // Update is called once per frame
         void Update()
         {
-            //bombStrengt = PlayerBombRange(0); // check range
+            //bombStrengt = PlayerBombRange(0,bombStrengt); // check range
             /*
             if (health == 0) //isDead
             {
@@ -85,13 +85,13 @@ namespace GameLogic
             }
         }
 
-        public int PlayerBombRange(int isStart)
+        public int PlayerBombRange(int isStart, int bombStrengt) // 1 = starting power, 2 = increase range by one, 0 = just checking
         {
             if (isStart == 1) // Initial pwr
             {
                 return bombStrengt = 2;
             }
-            else if (isStart == 0) //increase pwr
+            else if (isStart == 2) //increase pwr
             {
                 return (bombStrengt += 1);
             }
