@@ -81,11 +81,11 @@ public class MapGenerator
             gameBoard[row, col - 1] = Element.START;
             gameBoard[row - 1, col] = Element.START;
         }
-        for (int i = 0; i < gameBoard.GetLength(0); i++)
+        for (row = 0; row < gameBoard.GetLength(0); row++)
         {
-            for (int j = 0; j < gameBoard.GetLength(1); j++)
+            for (col = 0; col < gameBoard.GetLength(1); col++)
             {
-                if (gameBoard[i, j] != Element.START) gameBoard[i, j] = Element.GROUND;
+                if (gameBoard[row, col] != Element.START) gameBoard[row, col] = Element.GROUND;
             }
         }
         return;
@@ -96,17 +96,17 @@ public class MapGenerator
         List<Position> validPositions = new List<Position>();
         if (players == 2)
         {
-            for (int i = 0; i < gameBoard.GetLength(0); i++)
+            for (int row = 0; row < gameBoard.GetLength(0); row++)
             {
-                for (int j = 0; j < gameBoard.GetLength(1); j++)
+                for (int col = 0; col < gameBoard.GetLength(1); col++)
                 {
-                    if (i == 6 || (j == 12 && i > 6)) continue;
-                    else if ((j == 0 && i < 6)) j++;
-                    if (gameBoard[i, j] != Element.START)
+                    if (row == 6 || (col == 12 && row > 6)) continue;
+                    else if ((col == 0 && row < 6)) col++;
+                    if (gameBoard[row, col] != Element.START)
                     {
                         Position position = new Position();
-                        position.Row = i;
-                        position.Col = j;
+                        position.Row = row;
+                        position.Col = col;
                         validPositions.Add(position);
                     }
                 }
@@ -116,18 +116,18 @@ public class MapGenerator
 
         else if (players == 4)
         {
-            for (int i = 0; i < gameBoard.GetLength(0); i++)
+            for (int row = 0; row < gameBoard.GetLength(0); row++)
             {
-                if (i == 7) continue;
-                for (int j = 0; j < gameBoard.GetLength(1); j++)
+                if (row == 7) continue;
+                for (int col = 0; col < gameBoard.GetLength(1); col++)
                 {
-                    if ((j < 8 && i == 0) || (j > 6 && i == 14) || (j == 14 && i < 7) || (j == 0 && i > 7)) continue;
-                    else if (j == 7) j++;
-                    if (gameBoard[i, j] != Element.START)
+                    if ((col < 8 && row == 0) || (col > 6 && row == 14) || (col == 14 && row < 7) || (col == 0 && row > 7)) continue;
+                    else if (col == 7) col++;
+                    if (gameBoard[row, col] != Element.START)
                     {
                         Position position = new Position();
-                        position.Row = i;
-                        position.Col = j;
+                        position.Row = row;
+                        position.Col = col;
                         validPositions.Add(position);
                     }
                 }
@@ -136,17 +136,17 @@ public class MapGenerator
         }
         else
         {
-            for (int i = 0; i < gameBoard.GetLength(0); i++)
+            for (int row = 0; row < gameBoard.GetLength(0); row++)
             {
-                if (i == 10) continue;
-                for (int j = 0; j < gameBoard.GetLength(1) - 1; j++)
+                if (row == 10) continue;
+                for (int col = 0; col < gameBoard.GetLength(1) - 1; col++)
                 {
-                    if ((j == 0 && j < gameBoard.GetLength(1) - 2) || (j == 12)) j++;
-                    if (gameBoard[i, j] != Element.START)
+                    if ((col == 0 && col < gameBoard.GetLength(1) - 2) || (col == 12)) col++;
+                    if (gameBoard[row, col] != Element.START)
                     {
                         Position position = new Position();
-                        position.Row = i;
-                        position.Col = j;
+                        position.Row = row;
+                        position.Col = col;
                         validPositions.Add(position);
                     }
                 }
@@ -165,17 +165,17 @@ public class MapGenerator
                 gameBoard[position.Row, position.Col] = Element.WALL;
             }
         }
-        for (int i = 0; i < gameBoard.GetLength(0); i++)
+        for (int row = 0; row < gameBoard.GetLength(0); row++)
         {
-            for (int j = 0; j < gameBoard.GetLength(1); j++)
+            for (int col = 0; col < gameBoard.GetLength(1); col++)
             {
-                if (gameBoard[i, j] != Element.WALL && gameBoard[i, j] != Element.START)
+                if (gameBoard[row, col] != Element.WALL && gameBoard[row, col] != Element.START)
                 {
                     if (random.Next(1, 11) <= 5)
                     {
-                        gameBoard[i, j] = Element.TREE;
+                        gameBoard[row, col] = Element.TREE;
                     }
-                    else { gameBoard[i, j] = Element.ROCK; }
+                    else { gameBoard[row, col] = Element.ROCK; }
                 }
             }
         }
