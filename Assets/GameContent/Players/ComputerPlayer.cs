@@ -1,36 +1,116 @@
+using Assets.GameLogic;
 using GameLogic;
 using UnityEngine;
 using Random = System.Random;
 
 public class ComputerPlayer : MonoBehaviour, IPlayer
 {
-    private enum DIRECTIONS
-    {
-        NORTH,
-        EAST,
-        SOUTH,
-        WEST
-    }
-    private DIRECTIONS walkingDirection;
+    //private enum DIRECTIONS
+    //{
+    //    NORTH,
+    //    EAST,
+    //    SOUTH,
+    //    WEST
+    //}
+    //private DIRECTIONS walkingDirection;
+
+    public KeyCode Up = KeyCode.W;
+    public KeyCode Down = KeyCode.S;
+    public KeyCode Left = KeyCode.A;
+    public KeyCode Right = KeyCode.D;
+    private KeyCode[] movement = new KeyCode[4];
+
+    private float timer;
+
+
 
     private string playerName;
     private Random random;
 
     Player player = new Player();
 
+    //CharacterMovement cm;
+
+    public Rigidbody2D playerBody { get; set; }
+    private Vector2 move = Vector2.zero;
+
+    //Animation
+    public AnimatedRenderer MovementUp;
+    public AnimatedRenderer MovementDown;
+    public AnimatedRenderer MovementLeft;
+    public AnimatedRenderer MovementRight;
+    private AnimatedRenderer lastMovement;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         random = new Random();
+        player.Speed = 105;
+        movement[0] = Up;
+        movement[1] = Down;
+        movement[2] = Left;
+        movement[3] = Right;
+        //Vector2 startPos = transform.position;
+    }
+
+    //Gets Component from player
+    private void Awake()
+    {
+        playerBody = GetComponent<Rigidbody2D>();
+        lastMovement = MovementDown;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (random.Next(1, 10) < 4)
+        ChangeWalkDirection();
+
+
+    }
+
+    private void FixedUpdate()
+    {
+        Vector2 pos = playerBody.position;
+        Vector2 translationMovement = move * player.Speed * Time.fixedDeltaTime;
+        playerBody.MovePosition(pos + translationMovement);
+    }
+
+    public void MakeMove(Vector2 newDirection, AnimatedRenderer directionAnimation)
+    {
+        move = newDirection;
+        //MovementUp.enabled = directionAnimation == MovementUp;
+        //MovementDown.enabled = directionAnimation == MovementDown;
+        //MovementLeft.enabled = directionAnimation == MovementLeft;
+        //MovementRight.enabled = directionAnimation == MovementRight;
+
+        //lastMovement = directionAnimation;
+        //lastMovement.idle = move == Vector2.zero;
+    }
+
+
+    public void Move(KeyCode movement)
+    {
+        if (movement == Up)
         {
-            ChangeWalkDirection();
+            MakeMove(Vector2.up, MovementUp);
+        }
+        else if (movement == Down)
+        {
+            MakeMove(Vector2.down, MovementDown);
+        }
+        else if (movement == Left)
+        {
+            MakeMove(Vector2.left, MovementLeft);
+        }
+        else if (movement == Right)
+        {
+            MakeMove(Vector2.right, MovementRight);
+        }
+        else
+        {
+            MakeMove(Vector2.zero, lastMovement);
         }
     }
 
@@ -49,7 +129,7 @@ public class ComputerPlayer : MonoBehaviour, IPlayer
             }
             else
             {
-                Walk(gameBoard); // Walks randomly
+                //Walk(gameBoard); // Walks randomly
             }
         }
     }
@@ -58,33 +138,39 @@ public class ComputerPlayer : MonoBehaviour, IPlayer
     // Therefor this function will randomly change the players walking direction for example every 3 seconds.
     private void ChangeWalkDirection()
     {
-        //if (true)
-        //{
-        //MakeMove(Vector2.right, MovementRight);
-        //}
-    }
+        timer += Time.deltaTime;
+        Debug.Log($"\nTimer: {timer}");
 
-    private void Walk(Element[,]? gameBoard)
-    {
-        // Write logic for which directions the computer should walk.
-        // This should act like the the computers walking controls instead of keyboard.
-        if (gameBoard[player.X, player.Y - 1] == Element.GROUND) // Can Walk NORTH?
+        // Change direction every second
+        if (timer > 1)
         {
-            walkingDirection = DIRECTIONS.EAST;
-        }
-        else if (gameBoard[player.X + 1, player.Y] == Element.GROUND) // Can Walk EAST?
-        {
+            Move(movement[random.Next(0, 4)]);
 
-        }
-        else if (gameBoard[player.X, player.Y + 1] == Element.GROUND) // Can Walk SOUTH?
-        {
-
-        }
-        else if (gameBoard[player.X, player.Y - 1] == Element.GROUND) // Can Walk WEST?
-        {
-
+            timer = 0;
         }
     }
+
+    //private void Walk(Element[,]? gameBoard)
+    //{
+    //    // Write logic for which directions the computer should walk.
+    //    // This should act like the the computers walking controls instead of keyboard.
+    //    if (gameBoard[player.X, player.Y - 1] == Element.GROUND) // Can Walk NORTH?
+    //    {
+    //        walkingDirection = DIRECTIONS.EAST;
+    //    }
+    //    else if (gameBoard[player.X + 1, player.Y] == Element.GROUND) // Can Walk EAST?
+    //    {
+
+    //    }
+    //    else if (gameBoard[player.X, player.Y + 1] == Element.GROUND) // Can Walk SOUTH?
+    //    {
+
+    //    }
+    //    else if (gameBoard[player.X, player.Y - 1] == Element.GROUND) // Can Walk WEST?
+    //    {
+
+    //    }
+    //}
 
     private void Escape(Element[,]? gameBoard)
     {
