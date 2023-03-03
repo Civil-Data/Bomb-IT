@@ -17,10 +17,10 @@ namespace GameContent
         //}
         //private DIRECTIONS walkingDirection;
 
-        public KeyCode Up = KeyCode.W;
-        public KeyCode Down = KeyCode.S;
-        public KeyCode Left = KeyCode.A;
-        public KeyCode Right = KeyCode.D;
+        private KeyCode Up = KeyCode.W;
+        private KeyCode Down = KeyCode.S;
+        private KeyCode Left = KeyCode.A;
+        private KeyCode Right = KeyCode.D;
         private KeyCode[] movement = new KeyCode[4];
 
         private float timer;
@@ -38,11 +38,16 @@ namespace GameContent
         private Vector2 move = Vector2.zero;
 
         //Animation
+        [SerializeField]
         public AnimatedRenderer MovementUp;
+        [SerializeField]
         public AnimatedRenderer MovementDown;
+        [SerializeField]
         public AnimatedRenderer MovementLeft;
+        [SerializeField]
         public AnimatedRenderer MovementRight;
         private AnimatedRenderer lastMovement;
+
 
 
 

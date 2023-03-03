@@ -22,6 +22,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ExitGame()
     {
+        Time.timeScale = 1f; // Starts the game.
         SceneManager.LoadScene("Meny");
     }
 }
