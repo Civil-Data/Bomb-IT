@@ -9,10 +9,14 @@ public class CharacterMovement : MonoBehaviour
 
     //Public Variables will be changeble in Unity
     public float speed = 3f;
+    [SerializeField]
     public KeyCode Up = KeyCode.W;
+    [SerializeField]
     public KeyCode Down = KeyCode.S;
-    public KeyCode Left = KeyCode.A;
+    [SerializeField]
     public KeyCode Right = KeyCode.D;
+    [SerializeField]
+    public KeyCode Left = KeyCode.A;
 
     public Rigidbody2D playerBody { get; set; }
     private Vector2 move = Vector2.down;
@@ -22,8 +26,8 @@ public class CharacterMovement : MonoBehaviour
     //Animation
     public AnimatedRenderer MovementUp;
     public AnimatedRenderer MovementDown;
-    public AnimatedRenderer MovementLeft;
     public AnimatedRenderer MovementRight;
+    public AnimatedRenderer MovementLeft;
     private AnimatedRenderer lastMovement;
 
     //Gets Component from player
