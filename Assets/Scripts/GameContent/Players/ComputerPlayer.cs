@@ -1,7 +1,9 @@
 using Assets.GameLogic;
 using GameLogic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using Random = System.Random;
+using Tile1 = UnityEngine.Tilemaps.Tile;
 
 namespace GameContent
 {
@@ -23,7 +25,8 @@ namespace GameContent
         private KeyCode Right = KeyCode.D;
         private KeyCode[] movement = new KeyCode[4];
 
-        private float timer;
+        private float bombCooldown;
+        private float walkTimer;
 
 
 
@@ -48,7 +51,13 @@ namespace GameContent
         public AnimatedRenderer MovementRight;
         private AnimatedRenderer lastMovement;
 
+        [SerializeField]
+        private GameObject map;
 
+        private Tilemap tMap;
+
+        [SerializeField]
+        private Tile1 bomb;
 
 
         // Start is called before the first frame update
@@ -60,6 +69,8 @@ namespace GameContent
             movement[1] = Down;
             movement[2] = Left;
             movement[3] = Right;
+            tMap = map.GetComponent<Tilemap>();
+            //bomb.gameObject.transform.localScale = new Vector3(2, 2, 0);
             //Vector2 startPos = transform.position;
         }
 
@@ -74,7 +85,7 @@ namespace GameContent
         void Update()
         {
             ChangeWalkDirection();
-
+            PlaceBombRequest();
 
         }
 
@@ -124,37 +135,63 @@ namespace GameContent
 
         public void PlaceBombRequest(Element[,]? gameBoard)
         {
-            if (gameBoard[player.X, player.Y] == Element.GROUND)
+
+        }
+
+
+        public void PlaceBombRequest()
+        {
+            bombCooldown += Time.deltaTime;
+            if (bombCooldown > 4)
             {
-                // Place the bomb on the players current position.
-                gameBoard[player.X, player.Y] = Element.BOMB;
+                RectTransform panel = (tMap.transform.parent.parent.gameObject).GetComponent<RectTransform>();
 
-                // gameBoard = DrawDangerZones(gameBoard, X, Y, bombPower);
+                int x = (int)panel.rect.width / (int)transform.position.x;
+                int y = (int)panel.rect.height / (int)transform.position.y;
+                Debug.Log($"\nCoords: x: {x}, y: {y}");
 
-                if (random.Next(1, 3) > 2) // Should be 50/50 chance of an Escape act.
-                {
-                    Escape(gameBoard);
-                }
-                else
-                {
-                    //Walk(gameBoard); // Walks randomly
-                }
+                tMap.SetTile(new Vector3Int(x, y, 0), bomb);
+                Debug.Log($"\nParent: {tMap.transform.parent.parent.gameObject.name}");
+
+                bombCooldown = 0;
             }
+            //Debug.Log($"\nBomb cooldown: {bombCooldown}");
+
+
+            //if (gameBoard[player.X, player.Y] == Element.GROUND)
+            //{
+            //    // Place the bomb on the players current position.
+            //    gameBoard[player.X, player.Y] = Element.BOMB;
+
+            //    // gameBoard = DrawDangerZones(gameBoard, X, Y, bombPower);
+
+            //    if (random.Next(1, 3) > 2) // Should be 50/50 chance of an Escape act.
+            //    {
+            //        Escape(gameBoard);
+            //    }
+            //    else
+            //    {
+            //        //Walk(gameBoard); // Walks randomly
+            //    }
+            //}
         }
 
         // If the player continue walking in the same direction he might get stuck.
         // Therefor this function will randomly change the players walking direction for example every 3 seconds.
         public void ChangeWalkDirection()
         {
-            timer += Time.deltaTime;
-            Debug.Log($"\nTimer: {timer}");
+            walkTimer += Time.deltaTime;
+
+
+            //Debug.Log($"\nTimer: {walkTimer}");
 
             // Change direction every second
-            if (timer > 1)
+            if (walkTimer > 1)
             {
                 Move(movement[random.Next(0, 4)]);
+                Debug.Log($"\nPlayer position: x:{transform.position.x} y:{transform.position.y}");
 
-                timer = 0;
+                walkTimer = 0;
             }
         }
 
