@@ -88,11 +88,11 @@ namespace GameContent
         public void MakeMove(Vector2 newDirection, AnimatedRenderer directionAnimation)
         {
             move = newDirection;
-            
-           // MovementUp.enabled = directionAnimation == MovementUp;
-          //  MovementDown.enabled = directionAnimation == MovementDown;
-          //  MovementLeft.enabled = directionAnimation == MovementLeft;
-          //  MovementRight.enabled = directionAnimation == MovementRight;
+
+            // MovementUp.enabled = directionAnimation == MovementUp;
+            //  MovementDown.enabled = directionAnimation == MovementDown;
+            //  MovementLeft.enabled = directionAnimation == MovementLeft;
+            //  MovementRight.enabled = directionAnimation == MovementRight;
 
             lastMovement = directionAnimation;
             lastMovement.idle = move == Vector2.zero;

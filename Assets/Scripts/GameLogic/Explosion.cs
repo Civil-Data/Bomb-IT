@@ -10,7 +10,7 @@ public class Explosion : MonoBehaviour
     public AnimatedRenderer bombEnding;
     public void SetBombDirection(Vector2 dir)
     {
-        float angle = Mathf.Atan2(dir.y,dir.x);
+        float angle = Mathf.Atan2(dir.y, dir.x);
         transform.rotation = Quaternion.AngleAxis(Mathf.Rad2Deg * angle, Vector3.forward);
     }
 

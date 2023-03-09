@@ -31,7 +31,7 @@ public class BombController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(input) && bombsRemaining > 0) 
+        if (Input.GetKeyDown(input) && bombsRemaining > 0)
         {
             StartCoroutine(PlaceBomb());
         }
@@ -43,7 +43,7 @@ public class BombController : MonoBehaviour
         pos.x = Mathf.Round(pos.x);
         pos.y = Mathf.Round(pos.y);
 
-        GameObject bomb = Instantiate(bombPrefab,pos, Quaternion.identity);
+        GameObject bomb = Instantiate(bombPrefab, pos, Quaternion.identity);
         bombsRemaining--;
 
 
@@ -63,31 +63,31 @@ public class BombController : MonoBehaviour
 
         Destroy(bomb);
         bombsRemaining++;
-        
+
     }
 
     private void Explode(Vector2 explosionPosition, Vector2 dir, int radius)
     {
-        if(radius <= 0)
+        if (radius <= 0)
         {
             return;
         }
 
         explosionPosition += dir;
-        if(Physics2D.OverlapBox(explosionPosition, Vector2.one / 2f, 0f, explosionMask))
+        if (Physics2D.OverlapBox(explosionPosition, Vector2.one / 2f, 0f, explosionMask))
         {
-                return;
+            return;
         }
-                Explosion explosion = Instantiate(explPrefab, explosionPosition, Quaternion.identity);
-                explosion.BombStageRender(radius > 1 ? explosion.bombMiddle : explosion.bombEnding);
-                explosion.SetBombDirection(dir);
-                Destroy(explosion.gameObject, duration);
-                Explode(explosionPosition, dir, radius - 1);
+        Explosion explosion = Instantiate(explPrefab, explosionPosition, Quaternion.identity);
+        explosion.BombStageRender(radius > 1 ? explosion.bombMiddle : explosion.bombEnding);
+        explosion.SetBombDirection(dir);
+        Destroy(explosion.gameObject, duration);
+        Explode(explosionPosition, dir, radius - 1);
     }
 
     private void BombCollision(Collider2D cd)
     {
-        if(cd.gameObject.layer == LayerMask.NameToLayer("Bomb"))
+        if (cd.gameObject.layer == LayerMask.NameToLayer("Bomb"))
         {
             cd.isTrigger = false;
         }
