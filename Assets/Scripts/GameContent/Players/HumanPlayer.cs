@@ -1,5 +1,7 @@
 using Assets.GameLogic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+using Tile1 = UnityEngine.Tilemaps.Tile;
 
 public class HumanPlayer : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class HumanPlayer : MonoBehaviour
 
     public Rigidbody2D playerBody { get; set; }
     private Vector2 move = Vector2.down;
+    private float bombCooldown;
 
     //Animation
     public AnimatedRenderer MovementUp;
@@ -20,10 +23,18 @@ public class HumanPlayer : MonoBehaviour
     public AnimatedRenderer MovementRight;
     private AnimatedRenderer lastMovement;
 
+    private Tilemap tMap;
+
+    [SerializeField]
+    private GameObject map;
+
+    [SerializeField]
+    private Tile1 bomb;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        tMap = map.GetComponent<Tilemap>();
     }
 
     //Gets Component from player
@@ -38,6 +49,7 @@ public class HumanPlayer : MonoBehaviour
     private void Update()
     {
         Move();
+        PlaceBombRequest();
     }
 
     private void FixedUpdate()
@@ -50,13 +62,13 @@ public class HumanPlayer : MonoBehaviour
     public void MakeMove(Vector2 newDirection, AnimatedRenderer directionAnimation)
     {
         move = newDirection;
-        MovementUp.enabled = directionAnimation == MovementUp;
-        MovementDown.enabled = directionAnimation == MovementDown;
-        MovementLeft.enabled = directionAnimation == MovementLeft;
-        MovementRight.enabled = directionAnimation == MovementRight;
+        //MovementUp.enabled = directionAnimation == MovementUp;
+        //MovementDown.enabled = directionAnimation == MovementDown;
+        //MovementLeft.enabled = directionAnimation == MovementLeft;
+        //MovementRight.enabled = directionAnimation == MovementRight;
 
-        lastMovement = directionAnimation;
-        lastMovement.idle = move == Vector2.zero;
+        //lastMovement = directionAnimation;
+        //lastMovement.idle = move == Vector2.zero;
     }
 
     public void Move()
@@ -80,6 +92,24 @@ public class HumanPlayer : MonoBehaviour
         else
         {
             MakeMove(Vector2.zero, lastMovement);
+        }
+    }
+
+    public void PlaceBombRequest()
+    {
+        bombCooldown += Time.deltaTime;
+        if (bombCooldown > 1 && Input.GetKeyDown(KeyCode.Space))
+        {
+            RectTransform panel = (tMap.transform.parent.parent.gameObject).GetComponent<RectTransform>();
+
+            int x = (int)panel.rect.width / (int)transform.position.x;
+            int y = (int)panel.rect.height / (int)transform.position.y;
+            Debug.Log($"\nCoords: x: {x}, y: {y}");
+
+            tMap.SetTile(new Vector3Int(x, y, 0), bomb);
+            Debug.Log($"\nParent: {tMap.transform.parent.parent.gameObject.name}");
+
+            bombCooldown = 0;
         }
     }
 }

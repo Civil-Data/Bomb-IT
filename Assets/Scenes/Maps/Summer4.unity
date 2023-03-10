@@ -199,6 +199,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 60ff4ac85067c1b409f815e9a5b75d48, type: 3}
+    - target: {fileID: 8219615085801892206, guid: 4dfc6c98c4180554795c516cc11fd083, type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 650129438}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2225,6 +2229,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6245642826273787378, guid: f5499d99a02369c4baef2c033d534786, type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 650129438}
     - target: {fileID: 6245642826273787379, guid: f5499d99a02369c4baef2c033d534786, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -5055,6 +5063,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6245642826273787378, guid: f5499d99a02369c4baef2c033d534786, type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 650129438}
     - target: {fileID: 6245642826273787379, guid: f5499d99a02369c4baef2c033d534786, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -5129,6 +5141,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 12426f48c22daf24fb20e59c72cdc5df, type: 3}
+    - target: {fileID: 8219615085801892206, guid: 4dfc6c98c4180554795c516cc11fd083, type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 650129438}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

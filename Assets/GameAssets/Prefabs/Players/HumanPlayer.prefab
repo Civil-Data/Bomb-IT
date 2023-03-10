@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3146061126010332341}
   - component: {fileID: 3146061126010332340}
   - component: {fileID: 3146061126010332339}
+  - component: {fileID: 8219615085801892206}
   m_Layer: 0
   m_Name: HumanPlayer
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3146061126010332342
 SpriteRenderer:
@@ -102,12 +103,12 @@ MonoBehaviour:
   speed: 105
   Up: 119
   Down: 115
-  Left: 97
   Right: 100
+  Left: 97
   MovementUp: {fileID: 0}
   MovementDown: {fileID: 0}
-  MovementLeft: {fileID: 0}
   MovementRight: {fileID: 0}
+  MovementLeft: {fileID: 0}
 --- !u!50 &3146061126010332340
 Rigidbody2D:
   serializedVersion: 4
@@ -180,3 +181,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21, y: 0.26}
   m_EdgeRadius: 0.03
+--- !u!114 &8219615085801892206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146061126010332337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976fb3e7263e48d439000dfa0d242999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 105
+  Up: 119
+  Down: 115
+  Left: 97
+  Right: 100
+  MovementUp: {fileID: 0}
+  MovementDown: {fileID: 0}
+  MovementLeft: {fileID: 0}
+  MovementRight: {fileID: 0}
+  map: {fileID: 3140900227673363629, guid: deec4a1ccb8cab445b0324e5e634cae6, type: 3}
+  bomb: {fileID: 11400000, guid: e9e069238301d6e4692f3ff4b5b91fa7, type: 2}
